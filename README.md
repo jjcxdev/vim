@@ -1,44 +1,48 @@
+# LearnVim: A Beginner's Guide to Vim Motions
+
 ![LearnVim Logo](https://raw.githubusercontent.com/jjcxdev/vim/main/public/images/learnvim.png "LearnVim Interactive Learning Tool")
 
-# LearnVim: A Vim Motions Interactive Learning Tool
+Welcome to **LearnVim**, the perfect starting point for those new to Vim and feeling overwhelmed by the transition from graphical IDEs or text editors like VS Code to a terminal-based editor. LearnVim is designed to make your introduction to Vim as smooth and understandable as possible, emphasizing interactive learning with various keyboard layouts to demystify Vim's unique command and mode system.
 
-Welcome to LearnVim, your interactive guide to mastering Vim motions! Designed for beginners overwhelmed by the complexity of Vim, this web application offers an engaging way to familiarize yourself with essential Vim commands within a friendly, graphical interface.
+## Why LearnVim?
 
-## Features
+LearnVim caters specifically to beginners by offering:
 
-- **Selectable Keyboard Layouts**: Choose from a variety of keyboard layouts to match your physical setup. Currently supported layouts include ANSI, with more coming soon:
+- **Keyboard Layout Flexibility:** Whether you're using ANSI, ISO*, Corne*, ZSA Moonlander*, ZSA Voyager, or Kinesis*, LearnVim lets you select your preferred keyboard layout. This way, you can learn Vim motions in an environment that mirrors your actual setup. Missing your layout? Request its addition by submitting an issue with the layout's name, a picture, and a brief description under the Keyboards label.
 
-  - _Corne_ (Coming Soon)
-  - _ISO_ (Coming Soon)
-  - _ZSA Moonlander_ (Coming Soon)
-  - _ZSA Voyager_ (Coming Soon)
-  - _Kinesis_ (Coming Soon)
+- **Mode-Specific Highlights:** LearnVim simplifies Vim by highlighting keys relevant to the mode you're in (Normal, Visual, Insert). This visual guide helps you understand which keys to use and when, easing the learning curve.
 
-- **Mode-Specific Highlighting**: LearnVim highlights keys and lists commands relevant to Vim's different modes (Normal, Visual, Insert), making it easier to understand and remember their functions.
+- **Comprehensive Command List:** Alongside interactive highlights, LearnVim provides a list of commands for each mode, acting as a quick reference to help you learn and practice Vim commands effectively.
 
-## How to Use
+## Coming Soon
 
-Simply select your preferred keyboard layout and the Vim mode you want to explore. The web app will highlight the keys used in the selected mode and display a list of commands and their effects.
+We're constantly working to make LearnVim more inclusive of various keyboard layouts and configurations. The following are on our roadmap and will be supported soon:
+
+- ISO Keyboard Layout
+- Corne Keyboard Layout
+- ZSA Moonlander Keyboard Layout
+- Kinesis Keyboard Layout
+- Custom Key Configurations: Including popular configurations like ISRT, DVORAK, or fully customizable user setups.
+
+Stay tuned for updates, and don't hesitate to submit a layout or configuration request if your preference isn't listed!
+
+## Getting Started
+
+Dive into Vim with LearnVim by selecting your keyboard layout and exploring the commands available in each mode. Our goal is to make your transition to Vim less intimidating and more intuitive.
 
 ## Contributing
 
-Contributions are welcome! If you have suggestions for new keyboard layouts or features, please submit an issue with the following:
+LearnVim is a community-driven project, and we welcome contributions:
 
-- Name of the layout
-- A picture of the layout
-- Your improvement suggestions
+- **Issues:** Found a bug or have a feature idea? Submit an issue to help us improve.
+- **Pull Requests:** Have something to add? We encourage pull requests, especially those that make Vim more accessible to beginners.
 
-Please refer to the [CONTRIBUTING.md](CONTRIBUTING.md) for more details on how to submit pull requests.
+We're particularly interested in contributions that enhance the learning experience for new users, making Vim more approachable and less overwhelming.
 
-## Roadmap
+## Support
 
-- Adding support for more keyboard layouts.
-- Implementing custom key configurations like ISRT or DVORAK, and completely user-customized configs.
+Your support is crucial for LearnVim's growth. If you find this project helpful, consider starring our GitHub repository or sharing it with others embarking on their Vim journey. Every bit of support helps!
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE.md).
-
----
-
-LearnVim is not just a tool but a companion in your journey to mastering Vim. Whether you're transitioning from IDEs or just starting out with text editors, LearnVim offers a gentle introduction to the powerful world of Vim.
+LearnVim is open-source and available under the MIT license. Check the LICENSE file in the repository for more details.
