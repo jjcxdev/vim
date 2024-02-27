@@ -8,7 +8,7 @@ Welcome to **LearnVim**, the perfect starting point for those new to Vim and fee
 
 LearnVim caters specifically to beginners by offering:
 
-- **Keyboard Layout Flexibility:** Whether you're using ANSI, ISO*, Corne*, ZSA Moonlander*, ZSA Voyager, or Kinesis*, LearnVim lets you select your preferred keyboard layout. This way, you can learn Vim motions in an environment that mirrors your actual setup. Missing your layout? Request its addition by submitting an issue with the layout's name, a picture, and a brief description under the Keyboards label.
+- **Keyboard Layout Flexibility:** Whether you're using ANSI, ISO*, Corne*, ZSA Moonlander*, ZSA Voyager, or Kinesis*, LearnVim lets you select your preferred keyboard layout. This way, you can learn Vim motions in an environment that mirrors your actual setup.
 
 - **Mode-Specific Highlights:** LearnVim simplifies Vim by highlighting keys relevant to the mode you're in (Normal, Visual, Insert). This visual guide helps you understand which keys to use and when, easing the learning curve.
 
@@ -24,7 +24,9 @@ We're constantly working to make LearnVim more inclusive of various keyboard lay
 - Kinesis Keyboard Layout
 - Custom Key Configurations: Including popular configurations like ISRT, DVORAK, or fully customizable user setups.
 
-Stay tuned for updates, and don't hesitate to submit a layout or configuration request if your preference isn't listed!
+## Request Layouts and Keymaps
+
+Don't see your layout or keymap? Submit an issue under the 'Layouts' or 'Keymaps' labels. Make sure to include a detailed picture and any notes that will help us.
 
 ## Getting Started
 
