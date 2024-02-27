@@ -39,6 +39,29 @@ body {
   width: 3.55rem;
 }
 
+.key-onehalf {
+  width: 5.5rem;
+}
+
+.key-threequarter {
+  width: 6.5rem;
+}
+
+.key-shift {
+  width: 8.5rem;
+}
+
+.key-space {
+  width: 21.5rem;
+}
+
+.key-arrow {
+  height: 1.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  border-radius: 0.5rem;
+}
+
 .key-normal {
   border: 2px solid rgb(255, 0, 255);
   background: rgba(255, 0, 255, 0.3);

@@ -11,15 +11,13 @@ interface KeyProps {
   action: string;
   mode?: "normal" | "visual" | "insert";
   isPressed?: boolean;
-  className?: string;
 }
 
-export default function Key({
+export default function MbpOneHalfKey({
   children,
   action,
   mode = "normal",
   isPressed,
-  className = "",
 }: KeyProps) {
   // Initial styling, nothing additional applied
   let additionalModeClass = "";
@@ -52,12 +50,12 @@ export default function Key({
   let borderColor = isPressed ? "yellow" : ""; // yellow when pressed or inital styling
 
   // Construct className with base key class and additional mode class
-  const combinedClassName = `key${additionalModeClass} ${className}`.trim();
+  const className = `key${additionalModeClass}`;
 
   // Pass GLOBAL KEY PRESS to keys
   return (
     <kbd
-      className={combinedClassName}
+      className={className}
       style={{
         borderColor: borderColor,
         borderStyle: "solid",

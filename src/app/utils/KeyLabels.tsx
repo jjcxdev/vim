@@ -57,7 +57,7 @@ export const NormalModeKeyLabels: KeyAction = {
 
   // Undo/Redo Commands
   u: { normal: "Undo" },
-  "Ctrl + r": { normal: "Redo" },
+  "Control + r": { normal: "Redo" },
 
   // Search and Replace Commands
   "/": { normal: "Search" },
@@ -82,7 +82,7 @@ export const NormalModeKeyLabels: KeyAction = {
   O: { normal: "Open above & insert" },
   v: { normal: "Visual mode" },
   V: { normal: "Visual line mode" },
-  "Ctrl + v": { normal: "Visual block mode" },
+  "Control + v": { normal: "Visual block mode" },
 
   // Replace Mode Commands
   R: { normal: "Replace mode" },
@@ -130,14 +130,17 @@ export const VisualModeKeyLabels: KeyAction = {
 };
 
 export const InsertModeKeyLabels: KeyAction = {
+  // Mode Transition
+  Escape: { insert: "Exit Visual mode" },
+
   // Text Deletion
   Backspace: { insert: "Del prev" },
-  "Ctrl + h": { insert: "Del prev" },
-  "Ctrl + w": { insert: "Del prev word" },
-  "Ctrl + u": { insert: "Del to line start" },
-  "Ctrl + k": { insert: "Del to line end" },
+  "Control + h": { insert: "Del prev" },
+  "Control + w": { insert: "Del prev word" },
+  "Control + u": { insert: "Del to line start" },
+  "Control + k": { insert: "Del to line end" },
 
   // Autocomplete
-  "Ctrl + n": { insert: "Autocomplete next" },
-  "Ctrl + p": { insert: "Autocomplete prev" },
+  "Control + n": { insert: "Autocomplete next" },
+  "Control + p": { insert: "Autocomplete prev" },
 };
