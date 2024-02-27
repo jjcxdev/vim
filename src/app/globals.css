@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "@fontsource-variable/jetbrains-mono";
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  font-family: "JetBrains Mono Variable", monospace;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+.key {
+  border-color: #374151;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.5rem;
+  width: 3.55rem;
+}
+
+.key-normal {
+  border: 2px solid rgb(255, 0, 255);
+  background: rgba(255, 0, 255, 0.3);
+}
+
+.key-visual {
+  border: 2px solid rgb(0, 200, 255);
+  background: rgba(0, 200, 255, 0.3);
+}
+
+.key-insert {
+  border: 2px solid rgb(255, 0, 0);
+  background: rgba(255, 0, 0, 0.3);
+}
+
+.labels {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
