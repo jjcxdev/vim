@@ -28,7 +28,7 @@ export default function MBP() {
       <div className="top-row w-full justify-between flex">
         <Key
           isPressed={keyState[MAC_KEYS.Escape] || false}
-          action={MAC_KEYS.Escape}
+          actions={[MAC_KEYS.Escape]}
           mode={currentMode}
         >
           Esc
@@ -49,61 +49,113 @@ export default function MBP() {
       </div>
       {/* ---------------- SECOND ROW ---------------- */}
       <div className="top-row justify-between gap-2 flex">
-        <Key isPressed={keyState["`"] || false} action="`" mode={currentMode}>
+        <Key
+          isPressed={keyState["`"] || false}
+          actions={["`", "~"]}
+          mode={currentMode}
+        >
           <div>~</div>
           <div>`</div>
         </Key>
-        <Key isPressed={keyState["1"] || false} action="1" mode={currentMode}>
+        <Key
+          isPressed={keyState["1"] || false}
+          actions={["1", "!"]}
+          mode={currentMode}
+        >
           <div>!</div>
           <div>1</div>
         </Key>
-        <Key isPressed={keyState["2"] || false} action="2" mode={currentMode}>
+        <Key
+          isPressed={keyState["2"] || false}
+          actions={["2", "@"]}
+          mode={currentMode}
+        >
           <div>@</div>
           <div>2</div>
         </Key>
-        <Key isPressed={keyState["3"] || false} action="3" mode={currentMode}>
+        <Key
+          isPressed={keyState["3"] || false}
+          actions={["3", "#"]}
+          mode={currentMode}
+        >
           <div>#</div>
           <div>3</div>
         </Key>
-        <Key isPressed={keyState["4"] || false} action="4" mode={currentMode}>
+        <Key
+          isPressed={keyState["4"] || false}
+          actions={["4", "$"]}
+          mode={currentMode}
+        >
           <div>$</div>
           <div>4</div>
         </Key>
-        <Key isPressed={keyState["5"] || false} action="5" mode={currentMode}>
+        <Key
+          isPressed={keyState["5"] || false}
+          actions={["5", "%"]}
+          mode={currentMode}
+        >
           <div>%</div>
           <div>5</div>
         </Key>
-        <Key isPressed={keyState["6"] || false} action="6" mode={currentMode}>
+        <Key
+          isPressed={keyState["6"] || false}
+          actions={["6", "^"]}
+          mode={currentMode}
+        >
           <div>^</div>
           <div>6</div>
         </Key>
-        <Key isPressed={keyState["7"] || false} action="7" mode={currentMode}>
+        <Key
+          isPressed={keyState["7"] || false}
+          actions={["7", "&"]}
+          mode={currentMode}
+        >
           <div>&</div>
           <div>7</div>
         </Key>
-        <Key isPressed={keyState["8"] || false} action="8" mode={currentMode}>
+        <Key
+          isPressed={keyState["8"] || false}
+          actions={["8", "*"]}
+          mode={currentMode}
+        >
           <div>*</div>
           <div>8</div>
         </Key>
-        <Key isPressed={keyState["9"] || false} action="9" mode={currentMode}>
+        <Key
+          isPressed={keyState["9"] || false}
+          actions={["9", "("]}
+          mode={currentMode}
+        >
           <div>(</div>
           <div>9</div>
         </Key>
-        <Key isPressed={keyState["0"] || false} action="0" mode={currentMode}>
+        <Key
+          isPressed={keyState["0"] || false}
+          actions={["0", ")"]}
+          mode={currentMode}
+        >
           <div>)</div>
           <div>0</div>
         </Key>
-        <Key isPressed={keyState["-"] || false} action="-" mode={currentMode}>
+        <Key
+          isPressed={keyState["-"] || false}
+          actions={["-", "_"]}
+          mode={currentMode}
+        >
           <div>_</div>
           <div>-</div>
         </Key>
-        <Key isPressed={keyState["="] || false} action="=" mode={currentMode}>
+        <Key
+          isPressed={keyState["="] || false}
+          actions={["=", "+"]}
+          mode={currentMode}
+        >
           <div>+</div>
           <div>=</div>
         </Key>
         <Key
           isPressed={keyState[MAC_KEYS.Backspace] || false}
-          action={MAC_KEYS.Backspace}
+          actions={[MAC_KEYS.Backspace]}
           mode={currentMode}
           className="key-onehalf"
         >
@@ -114,51 +166,103 @@ export default function MBP() {
       <div className="top-row justify-between gap-2 flex">
         <Key
           isPressed={keyState[MAC_KEYS.Tab] || false}
-          action={MAC_KEYS.Tab}
+          actions={[MAC_KEYS.Tab]}
           mode={currentMode}
           className="key-onehalf"
         >
           tab
         </Key>
-        <Key isPressed={keyState["q"] || false} action="q" mode={currentMode}>
+        <Key
+          isPressed={keyState["q"] || false}
+          actions={["q"]}
+          mode={currentMode}
+        >
           Q
         </Key>
-        <Key isPressed={keyState["w"] || false} action="w" mode={currentMode}>
+        <Key
+          isPressed={keyState["w"] || false}
+          actions={["w"]}
+          mode={currentMode}
+        >
           W
         </Key>
-        <Key isPressed={keyState["e"] || false} action="e" mode={currentMode}>
+        <Key
+          isPressed={keyState["e"] || false}
+          actions={["e"]}
+          mode={currentMode}
+        >
           E
         </Key>
-        <Key isPressed={keyState["r"] || false} action="r" mode={currentMode}>
+        <Key
+          isPressed={keyState["r"] || false}
+          actions={["r"]}
+          mode={currentMode}
+        >
           R
         </Key>
-        <Key isPressed={keyState["t"] || false} action="t" mode={currentMode}>
+        <Key
+          isPressed={keyState["t"] || false}
+          actions={["t"]}
+          mode={currentMode}
+        >
           T
         </Key>
-        <Key isPressed={keyState["y"] || false} action="y" mode={currentMode}>
+        <Key
+          isPressed={keyState["y"] || false}
+          actions={["y"]}
+          mode={currentMode}
+        >
           Y
         </Key>
-        <Key isPressed={keyState["u"] || false} action="u" mode={currentMode}>
+        <Key
+          isPressed={keyState["u"] || false}
+          actions={["u"]}
+          mode={currentMode}
+        >
           U
         </Key>
-        <Key isPressed={keyState["i"] || false} action="i" mode={currentMode}>
+        <Key
+          isPressed={keyState["i"] || false}
+          actions={["i"]}
+          mode={currentMode}
+        >
           I
         </Key>
-        <Key isPressed={keyState["o"] || false} action="o" mode={currentMode}>
+        <Key
+          isPressed={keyState["o"] || false}
+          actions={["o"]}
+          mode={currentMode}
+        >
           O
         </Key>
-        <Key isPressed={keyState["p"] || false} action="p" mode={currentMode}>
+        <Key
+          isPressed={keyState["p"] || false}
+          actions={["p"]}
+          mode={currentMode}
+        >
           P
         </Key>
-        <Key isPressed={keyState["["] || false} action="[" mode={currentMode}>
+        <Key
+          isPressed={keyState["["] || false}
+          actions={["[", "{"]}
+          mode={currentMode}
+        >
           <div>{"{"}</div>
           <div>[</div>
         </Key>
-        <Key isPressed={keyState["]"] || false} action="]" mode={currentMode}>
+        <Key
+          isPressed={keyState["]"] || false}
+          actions={["]", "}"]}
+          mode={currentMode}
+        >
           <div>{"}"}</div>
           <div>]</div>
         </Key>
-        <Key isPressed={keyState["\\"] || false} action="\\" mode={currentMode}>
+        <Key
+          isPressed={keyState["\\"] || false}
+          actions={["\\", "|"]}
+          mode={currentMode}
+        >
           <div>|</div>
           <div>\</div>
         </Key>
@@ -167,50 +271,94 @@ export default function MBP() {
       <div className="top-row justify-between gap-2 flex">
         <Key
           isPressed={keyState[MAC_KEYS.CapsLock] || false}
-          action={MAC_KEYS.CapsLock}
+          actions={[MAC_KEYS.CapsLock]}
           mode={currentMode}
           className="key-threequarter"
         >
           caps
         </Key>
-        <Key isPressed={keyState["a"] || false} action="a" mode={currentMode}>
+        <Key
+          isPressed={keyState["a"] || false}
+          actions={["a"]}
+          mode={currentMode}
+        >
           A
         </Key>
-        <Key isPressed={keyState["s"] || false} action="s" mode={currentMode}>
+        <Key
+          isPressed={keyState["s"] || false}
+          actions={["s"]}
+          mode={currentMode}
+        >
           S
         </Key>
-        <Key isPressed={keyState["d"] || false} action="d" mode={currentMode}>
+        <Key
+          isPressed={keyState["d"] || false}
+          actions={["d"]}
+          mode={currentMode}
+        >
           D
         </Key>
-        <Key isPressed={keyState["f"] || false} action="f" mode={currentMode}>
+        <Key
+          isPressed={keyState["f"] || false}
+          actions={["f"]}
+          mode={currentMode}
+        >
           F
         </Key>
-        <Key isPressed={keyState["g"] || false} action="g" mode={currentMode}>
+        <Key
+          isPressed={keyState["g"] || false}
+          actions={["g"]}
+          mode={currentMode}
+        >
           G
         </Key>
-        <Key isPressed={keyState["h"] || false} action="h" mode={currentMode}>
+        <Key
+          isPressed={keyState["h"] || false}
+          actions={["h"]}
+          mode={currentMode}
+        >
           H
         </Key>
-        <Key isPressed={keyState["j"] || false} action="j" mode={currentMode}>
+        <Key
+          isPressed={keyState["j"] || false}
+          actions={["j"]}
+          mode={currentMode}
+        >
           J
         </Key>
-        <Key isPressed={keyState["k"] || false} action="k" mode={currentMode}>
+        <Key
+          isPressed={keyState["k"] || false}
+          actions={["k"]}
+          mode={currentMode}
+        >
           K
         </Key>
-        <Key isPressed={keyState["l"] || false} action="l" mode={currentMode}>
+        <Key
+          isPressed={keyState["l"] || false}
+          actions={["l"]}
+          mode={currentMode}
+        >
           L
         </Key>
-        <Key isPressed={keyState[";"] || false} action=";" mode={currentMode}>
+        <Key
+          isPressed={keyState[";"] || false}
+          actions={[":", ":"]}
+          mode={currentMode}
+        >
           <div>:</div>
           <div>;</div>
         </Key>
-        <Key isPressed={keyState["'"] || false} action="'" mode={currentMode}>
+        <Key
+          isPressed={keyState["'"] || false}
+          actions={["'", '"']}
+          mode={currentMode}
+        >
           <div>"</div>
           <div>'</div>
         </Key>
         <Key
           isPressed={keyState[MAC_KEYS.Enter] || false}
-          action={MAC_KEYS.Enter}
+          actions={[MAC_KEYS.Enter]}
           mode={currentMode}
           className="key-threequarter"
         >
@@ -221,48 +369,88 @@ export default function MBP() {
       <div className="top-row justify-between gap-2 flex">
         <Key
           isPressed={keyState[MAC_KEYS.Shift] || false}
-          action={MAC_KEYS.Shift}
+          actions={[MAC_KEYS.Shift]}
           mode={currentMode}
           className="key-shift"
         >
           shift
         </Key>
-        <Key isPressed={keyState["z"] || false} action="z" mode={currentMode}>
+        <Key
+          isPressed={keyState["z"] || false}
+          actions={["z"]}
+          mode={currentMode}
+        >
           Z
         </Key>
-        <Key isPressed={keyState["x"] || false} action="x" mode={currentMode}>
+        <Key
+          isPressed={keyState["x"] || false}
+          actions={["x"]}
+          mode={currentMode}
+        >
           X
         </Key>
-        <Key isPressed={keyState["c"] || false} action="c" mode={currentMode}>
+        <Key
+          isPressed={keyState["c"] || false}
+          actions={["c"]}
+          mode={currentMode}
+        >
           C
         </Key>
-        <Key isPressed={keyState["v"] || false} action="v" mode={currentMode}>
+        <Key
+          isPressed={keyState["v"] || false}
+          actions={["v"]}
+          mode={currentMode}
+        >
           V
         </Key>
-        <Key isPressed={keyState["b"] || false} action="b" mode={currentMode}>
+        <Key
+          isPressed={keyState["b"] || false}
+          actions={["b"]}
+          mode={currentMode}
+        >
           B
         </Key>
-        <Key isPressed={keyState["n"] || false} action="n" mode={currentMode}>
+        <Key
+          isPressed={keyState["n"] || false}
+          actions={["n"]}
+          mode={currentMode}
+        >
           N
         </Key>
-        <Key isPressed={keyState["m"] || false} action="m" mode={currentMode}>
+        <Key
+          isPressed={keyState["m"] || false}
+          actions={["m"]}
+          mode={currentMode}
+        >
           M
         </Key>
-        <Key isPressed={keyState[","] || false} action="," mode={currentMode}>
+        <Key
+          isPressed={keyState[","] || false}
+          actions={[",", "<"]}
+          mode={currentMode}
+        >
           <div>{"<"}</div>
           <div>,</div>
         </Key>
-        <Key isPressed={keyState["."] || false} action="." mode={currentMode}>
+        <Key
+          isPressed={keyState["."] || false}
+          actions={[".", ">"]}
+          mode={currentMode}
+        >
           <div>{">"}</div>
           <div>.</div>
         </Key>
-        <Key isPressed={keyState["/"] || false} action="/" mode={currentMode}>
+        <Key
+          isPressed={keyState["/"] || false}
+          actions={["/", "?"]}
+          mode={currentMode}
+        >
           <div>?</div>
           <div>/</div>
         </Key>
         <Key
           isPressed={keyState[MAC_KEYS.Shift] || false}
-          action={MAC_KEYS.Shift}
+          actions={[MAC_KEYS.Shift]}
           mode={currentMode}
           className="key-shift"
         >
@@ -273,35 +461,35 @@ export default function MBP() {
       <div className="top-row justify-between gap-2 flex">
         <Key
           isPressed={keyState["function"] || false}
-          action="function"
+          actions={["function"]}
           mode={currentMode}
         >
           fn
         </Key>
         <Key
           isPressed={keyState[MAC_KEYS.Control] || false}
-          action={MAC_KEYS.Control}
+          actions={[MAC_KEYS.Control]}
           mode={currentMode}
         >
           <ImCtrl />
         </Key>
         <Key
           isPressed={keyState[MAC_KEYS.Option] || false}
-          action={MAC_KEYS.Option}
+          actions={[MAC_KEYS.Option]}
           mode={currentMode}
         >
           <PiOptionBold />
         </Key>
         <Key
           isPressed={keyState[MAC_KEYS.Command] || false}
-          action={MAC_KEYS.Command}
+          actions={[MAC_KEYS.Command]}
           mode={currentMode}
         >
           <GrCommand />
         </Key>
         <Key
           isPressed={keyState[MAC_KEYS.Space] || false}
-          action={MAC_KEYS.Space}
+          actions={[MAC_KEYS.Space]}
           mode={currentMode}
           className="key-space"
         >
@@ -309,14 +497,14 @@ export default function MBP() {
         </Key>
         <Key
           isPressed={keyState[MAC_KEYS.Control] || false}
-          action={MAC_KEYS.Control}
+          actions={[MAC_KEYS.Control]}
           mode={currentMode}
         >
           <PiOptionBold />
         </Key>
         <Key
           isPressed={keyState[MAC_KEYS.Option] || false}
-          action={MAC_KEYS.Option}
+          actions={[MAC_KEYS.Option]}
           mode={currentMode}
         >
           <GrCommand />
@@ -324,7 +512,7 @@ export default function MBP() {
         <div className="flex gap-2 items-end">
           <Key
             isPressed={keyState[MAC_KEYS.ArrowLeft] || false}
-            action={MAC_KEYS.ArrowLeft}
+            actions={[MAC_KEYS.ArrowLeft]}
             mode={currentMode}
             className="key-arrow"
           >
@@ -333,7 +521,7 @@ export default function MBP() {
           <div className="flex flex-col gap-2">
             <Key
               isPressed={keyState[MAC_KEYS.ArrowUp] || false}
-              action={MAC_KEYS.ArrowUp}
+              actions={[MAC_KEYS.ArrowUp]}
               mode={currentMode}
               className="key-arrow"
             >
@@ -341,7 +529,7 @@ export default function MBP() {
             </Key>
             <Key
               isPressed={keyState[MAC_KEYS.ArrowDown] || false}
-              action={MAC_KEYS.ArrowDown}
+              actions={[MAC_KEYS.ArrowDown]}
               mode={currentMode}
               className="key-arrow"
             >
@@ -350,7 +538,7 @@ export default function MBP() {
           </div>
           <Key
             isPressed={keyState[MAC_KEYS.ArrowRight] || false}
-            action={MAC_KEYS.ArrowRight}
+            actions={[MAC_KEYS.ArrowRight]}
             mode={currentMode}
             className="key-arrow"
           >

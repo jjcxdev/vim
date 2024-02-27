@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <ModeProvider>
       <main className="flex h-screen w-full flex-col items-center justify-start p-4">
-        <div className="w-full max-w-[950px] flex justify-start pb-8">
+        <div className="w-full max-w-[950px] flex justify-start py-8">
           <select
             className="p-2 text-xs bg-gray-50/10 text-gray-400 rounded-md border border-gray-700"
             value={selectedLayout}

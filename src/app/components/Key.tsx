@@ -8,7 +8,7 @@ import { getActiveKeysForMode } from "../utils/ActiveKeys";
 
 interface KeyProps {
   children?: ReactNode;
-  action: string;
+  actions: string[];
   mode?: "normal" | "visual" | "insert";
   isPressed?: boolean;
   className?: string;
@@ -16,7 +16,7 @@ interface KeyProps {
 
 export default function Key({
   children,
-  action,
+  actions = [],
   mode = "normal",
   isPressed,
   className = "",
@@ -41,8 +41,8 @@ export default function Key({
     activeKeys = getActiveKeysForMode(keyLabels, safeMode);
   }
 
-  const isActiveInMode = activeKeys.includes(action);
-  console.log(`Is ${action} active in ${mode}? ${isActiveInMode}`);
+  const isActiveInMode = actions.some((action) => activeKeys.includes(action));
+  //console.log(`Is ${action} active in ${mode}? ${isActiveInMode}`);
 
   if (isActiveInMode) {
     additionalModeClass = ` key-${safeMode}`; // Apply only if key is active in current mode
@@ -64,7 +64,7 @@ export default function Key({
         borderWidth: "1px",
       }}
     >
-      <label className="labels">{children}</label>
+      <div className="flex flex-col">{children}</div>
     </kbd>
   );
 }

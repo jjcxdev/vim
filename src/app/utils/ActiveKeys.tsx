@@ -4,7 +4,7 @@ interface KeyAction {
   };
 }
 
-const explicitKeys = ["<", ">", ":", ";"];
+const explicitKeys = ["<", ">", ":", ";", "`"];
 
 const specialKeys = [
   "Control",
@@ -22,57 +22,45 @@ export function getActiveKeysForMode(
 ): string[] {
   let activeKeys = new Set<string>();
 
-  //  console.log(`Processing mode: ${mode}`);
-
   Object.keys(keyActionObj).forEach((key) => {
     const actions = keyActionObj[key];
     if (actions[mode]) {
-      // Check to see if the key begins with quotes
+      // Handling keys wrapped in quotes
       if (
         (key.startsWith(`"`) && key.endsWith(`"`)) ||
         (key.startsWith(`'`) && key.endsWith(`'`))
       ) {
-        // Strip the quotes for processing
-        const strippedKey = key.substring(1, key.length - 1);
-        // Process each character within the stripped key
-        strippedKey.split("").forEach((char) => {
-          // Check for explictKeys
-          if (explicitKeys.includes(char)) {
-            activeKeys.add(char);
-          }
-        });
+        const strippedKey = key.substring(1, key.length - 1); // Remove quotes
+        if (explicitKeys.includes(strippedKey)) {
+          activeKeys.add(strippedKey); // Add explicitly listed keys only
+        }
       } else {
-        if (key.length > 1) {
-          // Check for specialKeys and " + " pattern
-          if (specialKeys.some((specialKey) => key.includes(specialKey))) {
-            specialKeys.forEach((specialKey) => {
-              if (key.includes(specialKey)) {
-                activeKeys.add(specialKey);
-                let remainder = key.replace(specialKey, "").trim();
-                if (remainder.includes(" + ")) {
-                  remainder
-                    .split(" + ")
-                    .forEach((part) => activeKeys.add(part.trim()));
-                } else if (remainder) {
-                  // Handle any remainder that might not have been a special key
-                  activeKeys.add(remainder);
-                }
-              }
-            });
-          } else if (key.includes(" + ")) {
-            // Handle compound keys without special characters
-            key.split(" + ").forEach((part) => activeKeys.add(part.trim()));
-          }
+        // Handling special and compound keys
+        if (specialKeys.some((specialKey) => key.includes(specialKey))) {
+          // Add each special key found in the compound key
+          specialKeys.forEach((specialKey) => {
+            if (key.includes(specialKey)) {
+              activeKeys.add(specialKey);
+              // Handling compound keys split by " + "
+              key
+                .split(" + ")
+                .filter((part) => part !== specialKey)
+                .forEach((part) => activeKeys.add(part));
+            }
+          });
+        } else if (key.includes(" + ")) {
+          // Handling other compound keys without special keys
+          key.split(" + ").forEach((part) => activeKeys.add(part));
         } else {
-          // Register single character actions directly
-          if (!explicitKeys.includes(key)) {
-            activeKeys.add(key);
-          }
+          // Handling single character and other keys directly
+          activeKeys.add(key);
         }
       }
     }
   });
 
-  // console.log(`Active keys for mode "${mode}':`, [...activeKeys]);
+  // Debugging: Log the active keys for the given mode
+  console.log(`Active keys for mode "${mode}":`, Array.from(activeKeys));
+
   return Array.from(activeKeys);
 }

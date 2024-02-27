@@ -14,6 +14,7 @@ import Indicator from "./Indicators";
 import { useMode } from "../utils/ModeContext";
 import { MAC_KEYS } from "../utils/constants";
 import { useKeyHandler } from "../utils/useKeyHandlers";
+import { MdOutlineKeyboardOptionKey } from "react-icons/md";
 
 type KeyState = Record<string, boolean>;
 
@@ -33,26 +34,26 @@ export default function Voyager() {
               <div className="h-4"></div>
               <Key
                 isPressed={keyState[MAC_KEYS.CapsLock] || false}
-                action={MAC_KEYS.CapsLock}
+                actions={[MAC_KEYS.CapsLock]}
                 mode={currentMode}
               >
                 <BsCapslock />
               </Key>
               <Key
                 isPressed={keyState[""] || false}
-                action=""
+                actions={[""]}
                 mode={currentMode}
               ></Key>
               <Key
                 isPressed={keyState[MAC_KEYS.Control] || false}
-                action={MAC_KEYS.Control}
+                actions={[MAC_KEYS.Control]}
                 mode={currentMode}
               >
                 <ImCtrl />
               </Key>
               <Key
                 isPressed={keyState[MAC_KEYS.Shift] || false}
-                action={MAC_KEYS.Shift}
+                actions={[MAC_KEYS.Shift]}
                 mode={currentMode}
               >
                 <ImShift />
@@ -62,57 +63,63 @@ export default function Voyager() {
               <div className="h-4"></div>
               <Key
                 isPressed={keyState[""] || false}
-                action=""
+                actions={[""]}
                 mode={currentMode}
               ></Key>
               <Key
                 isPressed={keyState["q"] || false}
-                action="q"
+                actions={["q"]}
                 mode={currentMode}
               >
                 Q
               </Key>
               <Key
                 isPressed={keyState["a"] || false}
-                action="a"
+                actions={["a", "@"]}
                 mode={currentMode}
               >
-                A
+                <div>A</div>
+                <div>@</div>
               </Key>
               <Key
                 isPressed={keyState["z"] || false}
-                action="z"
+                actions={["z", "option"]}
                 mode={currentMode}
               >
-                Z
+                <div>Z</div>
+                <div>
+                  <MdOutlineKeyboardOptionKey />
+                </div>
               </Key>
             </div>
             <div className="third-column grid grid-cols-1 gap-2">
               <div className="h-2"></div>
               <Key
                 isPressed={keyState[""] || false}
-                action=""
+                actions={[""]}
                 mode={currentMode}
               >
                 Cut
               </Key>
               <Key
                 isPressed={keyState["w"] || false}
-                action="w"
+                actions={["w", "*"]}
                 mode={currentMode}
               >
-                W
+                <div>W</div>
+                <div>*</div>
               </Key>
               <Key
                 isPressed={keyState["s"] || false}
-                action="s"
+                actions={["s", "["]}
                 mode={currentMode}
               >
-                S
+                <div>S</div>
+                <div>[</div>
               </Key>
               <Key
                 isPressed={keyState["x"] || false}
-                action="x"
+                actions={["x"]}
                 mode={currentMode}
               >
                 X
@@ -122,28 +129,30 @@ export default function Voyager() {
             <div className="fourth-column grid grid-cols-1 gap-2">
               <Key
                 isPressed={keyState[""] || false}
-                action=""
+                actions={[""]}
                 mode={currentMode}
               >
                 Copy
               </Key>
               <Key
                 isPressed={keyState["e"] || false}
-                action="e"
+                actions={["e", "&"]}
                 mode={currentMode}
               >
-                E
+                <div>E</div>
+                <div>&</div>
               </Key>
               <Key
                 isPressed={keyState["d"] || false}
-                action="d"
+                actions={["d", "{"]}
                 mode={currentMode}
               >
-                D
+                <div>D</div>
+                <div>{"{"}</div>
               </Key>
               <Key
                 isPressed={keyState["c"] || false}
-                action="c"
+                actions={["c"]}
                 mode={currentMode}
               >
                 C
@@ -154,28 +163,30 @@ export default function Voyager() {
               <div className="h-2"></div>
               <Key
                 isPressed={keyState[""] || false}
-                action=""
+                actions={[""]}
                 mode={currentMode}
               >
                 Paste
               </Key>
               <Key
                 isPressed={keyState["r"] || false}
-                action="r"
+                actions={["r", "#"]}
                 mode={currentMode}
               >
-                R
+                <div>R</div>
+                <div>#</div>
               </Key>
               <Key
                 isPressed={keyState["f"] || false}
-                action="f"
+                actions={["f", "("]}
                 mode={currentMode}
               >
-                F
+                <div>f</div>
+                <div>(</div>
               </Key>
               <Key
                 isPressed={keyState["v"] || false}
-                action="v"
+                actions={["v"]}
                 mode={currentMode}
               >
                 V
@@ -186,31 +197,34 @@ export default function Voyager() {
               <div className="h-4"></div>
               <Key
                 isPressed={keyState[""] || false}
-                action=""
+                actions={[""]}
                 mode={currentMode}
               >
                 Undo
               </Key>
               <Key
                 isPressed={keyState["t"] || false}
-                action="t"
+                actions={["t", "|"]}
                 mode={currentMode}
               >
-                T
+                <div>T</div>
+                <div>|</div>
               </Key>
               <Key
                 isPressed={keyState["g"] || false}
-                action="g"
+                actions={["g", "!"]}
                 mode={currentMode}
               >
-                G
+                <div>G</div>
+                <div>!</div>
               </Key>
               <Key
                 isPressed={keyState["b"] || false}
-                action="b"
+                actions={["b", "<"]}
                 mode={currentMode}
               >
-                B
+                <div>B</div>
+                <div>{"<"}</div>
               </Key>
             </div>
           </div>
@@ -246,120 +260,132 @@ export default function Voyager() {
               <div className="h-4"></div>
               <Key
                 isPressed={keyState[MAC_KEYS.Escape] || false}
-                action={MAC_KEYS.Escape}
+                actions={[MAC_KEYS.Escape]}
                 mode={currentMode}
               >
                 Esc
               </Key>
               <Key
                 isPressed={keyState["y"] || false}
-                action="y"
+                actions={["y", "~"]}
                 mode={currentMode}
               >
-                Y
+                <div>Y</div>
+                <div>~</div>
               </Key>
               <Key
                 isPressed={keyState["h"] || false}
-                action="h"
+                actions={["h", "="]}
                 mode={currentMode}
               >
-                H
+                <div>H</div>
+                <div>=</div>
               </Key>
               <Key
                 isPressed={keyState["n"] || false}
-                action="n"
+                actions={["n", ">"]}
                 mode={currentMode}
               >
-                N
+                <div>N</div>
+                <div>{">"}</div>
               </Key>
             </div>
             <div className="second-column grid grid-cols-1 gap-2">
               <div className="h-4"></div>
               <Key
                 isPressed={keyState[MAC_KEYS.Delete] || false}
-                action={MAC_KEYS.Delete}
+                actions={[MAC_KEYS.Delete]}
                 mode={currentMode}
               >
                 Del
               </Key>
               <Key
                 isPressed={keyState["u"] || false}
-                action="u"
+                actions={["u", "^"]}
                 mode={currentMode}
               >
-                U
+                <div>U</div>
+                <div>^</div>
               </Key>
               <Key
                 isPressed={keyState["j"] || false}
-                action="j"
+                actions={["j", ")"]}
                 mode={currentMode}
               >
-                J
+                <div>J</div>
+                <div>)</div>
               </Key>
               <Key
                 isPressed={keyState["m"] || false}
-                action="m"
+                actions={["m", "\\"]}
                 mode={currentMode}
               >
-                M
+                <div>M</div>
+                <div>\</div>
               </Key>
             </div>
             <div className="third-column grid grid-cols-1 gap-2">
               <div className="h-2"></div>
               <Key
                 isPressed={keyState[""] || false}
-                action=""
+                actions={[""]}
                 mode={currentMode}
               ></Key>
               <Key
                 isPressed={keyState["i"] || false}
-                action="i"
+                actions={["i", "$"]}
                 mode={currentMode}
               >
-                I
+                <div>I</div>
+                <div>$</div>
               </Key>
               <Key
                 isPressed={keyState["k"] || false}
-                action="k"
+                actions={["k", "}"]}
                 mode={currentMode}
               >
-                K
+                <div>K</div>
+                <div>{"}"}</div>
               </Key>
               <Key
                 isPressed={keyState[","] || false}
-                action=","
+                actions={[",", "`"]}
                 mode={currentMode}
               >
-                ,
+                <div>,</div>
+                <div>`</div>
               </Key>
               <div className="h-2"></div>
             </div>
             <div className="fourth-column grid grid-cols-1 gap-2">
               <Key
                 isPressed={keyState[""] || false}
-                action=""
+                actions={[""]}
                 mode={currentMode}
               ></Key>
               <Key
                 isPressed={keyState["o"] || false}
-                action="o"
+                actions={["o", "%"]}
                 mode={currentMode}
               >
-                O
+                <div>O</div>
+                <div>%</div>
               </Key>
               <Key
                 isPressed={keyState["l"] || false}
-                action="l"
+                actions={["l", "]"]}
                 mode={currentMode}
               >
-                L
+                <div>L</div>
+                <div>]</div>
               </Key>
               <Key
                 isPressed={keyState["."] || false}
-                action="."
+                actions={[".", "?"]}
                 mode={currentMode}
               >
-                .
+                <div>.</div>
+                <div>?</div>
               </Key>
               <div className="h-4"></div>
             </div>
@@ -367,29 +393,34 @@ export default function Voyager() {
               <div className="h-2"></div>
               <Key
                 isPressed={keyState[""] || false}
-                action=""
+                actions={[""]}
                 mode={currentMode}
               ></Key>
               <Key
                 isPressed={keyState["p"] || false}
-                action="p"
+                actions={["p", "+"]}
                 mode={currentMode}
               >
-                P
+                <div>P</div>
+                <div>+</div>
               </Key>
               <Key
                 isPressed={keyState[";"] || false}
-                action=";"
+                actions={[";", ":"]}
                 mode={currentMode}
               >
-                ;
+                <div>;</div>
+                <div>:</div>
               </Key>
               <Key
                 isPressed={keyState[MAC_KEYS.Shift] || false}
-                action=""
+                actions={["/", "shift"]}
                 mode={currentMode}
               >
-                <ImShift />
+                <div>
+                  <ImShift />
+                </div>
+                <div>/</div>
               </Key>
               <div className="h-2"></div>
             </div>
@@ -397,26 +428,28 @@ export default function Voyager() {
               <div className="h-4"></div>
               <Key
                 isPressed={keyState[""] || false}
-                action=""
+                actions={[""]}
                 mode={currentMode}
               ></Key>
               <Key
                 isPressed={keyState["-"] || false}
-                action="-"
+                actions={["-", "_"]}
                 mode={currentMode}
               >
-                -
+                <div>-</div>
+                <div>_</div>
               </Key>
               <Key
                 isPressed={keyState["'"] || false}
-                action="'"
+                actions={["'", '"']}
                 mode={currentMode}
               >
-                '
+                <div>'</div>
+                <div>"</div>
               </Key>
               <Key
                 isPressed={keyState[MAC_KEYS.Control] || false}
-                action={MAC_KEYS.Control}
+                actions={[MAC_KEYS.Control]}
                 mode={currentMode}
               >
                 <ImCtrl />
@@ -434,17 +467,20 @@ export default function Voyager() {
           <div className="flex gap-2">
             <Key
               isPressed={keyState[MAC_KEYS.Enter] || false}
-              action={MAC_KEYS.Enter}
+              actions={[MAC_KEYS.Enter]}
               mode={currentMode}
             >
               <GrReturn />
             </Key>
             <Key
               isPressed={keyState[MAC_KEYS.Command] || false}
-              action={MAC_KEYS.Command}
+              actions={[MAC_KEYS.Command, MAC_KEYS.Tab]}
               mode={currentMode}
             >
-              <GrCommand />
+              <div>
+                <GrCommand />
+              </div>
+              <div>Tab</div>
             </Key>
           </div>
         </div>
@@ -454,14 +490,20 @@ export default function Voyager() {
             <div className="w-full"></div>
             <Key
               isPressed={keyState[MAC_KEYS.Backspace] || false}
-              action={MAC_KEYS.Backspace}
+              actions={[MAC_KEYS.Backspace, MAC_KEYS.Shift]}
               mode={currentMode}
             >
-              <IoBackspaceOutline />
+              <div>
+                {" "}
+                <IoBackspaceOutline />
+              </div>
+              <div>
+                <ImShift />
+              </div>
             </Key>
             <Key
               isPressed={keyState[MAC_KEYS.Space] || false}
-              action={MAC_KEYS.Space}
+              actions={[MAC_KEYS.Space]}
               mode={currentMode}
             >
               <MdSpaceBar />
