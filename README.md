@@ -47,4 +47,4 @@ Your support is crucial for LearnVim's growth. If you find this project helpful,
 
 ## License
 
-LearnVim is open-source and available under the MIT license. Check the LICENSE file in the repository for more details.
+LearnVim is open-source and available under the MIT license.
