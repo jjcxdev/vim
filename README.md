@@ -26,7 +26,7 @@ We're constantly working to make LearnVim more inclusive of various keyboard lay
 
 ## Request Layouts and Keymaps
 
-Don't see your layout or keymap? Submit an issue under the 'Layouts' or 'Keymaps' labels. Make sure to include a detailed picture and any notes that will help us.
+Don't see your layout or keymap? Submit an issue under the `Layouts` or `Keymaps` labels. Make sure to include a detailed picture and any notes that will help us.
 
 ## Getting Started
 
