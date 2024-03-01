@@ -57,11 +57,29 @@ export default function Home() {
 
 
   useEffect(() => {
-    const availableKeymaps = layoutKeymapMapping[selectedLayout];
-    if (availableKeymaps && availableKeymaps.length > 0) {
-      setSelectedKeymap(availableKeymaps[0]);
+    setSelectedLayout(Object.keys(layoutKeymapMapping)[0]);
+    setSelectedKeymap(layoutKeymapMapping[Object.keys(layoutKeymapMapping)[0]][0]);
+  }, []);
+
+
+  useEffect(() => {
+    if (selectedLayout) {
+      setSelectedKeymap(layoutKeymapMapping[selectedLayout][0]);
     }
   }, [selectedLayout]);
+
+  useEffect(() => {
+    const findLayoutForKeymap = (keymap: string) => {
+      return Object.keys(layoutKeymapMapping).find(layout =>
+        layoutKeymapMapping[layout].includes(keymap)
+      );
+    };
+
+    const layoutForKeymap = findLayoutForKeymap(selectedKeymap);
+    if (layoutForKeymap && selectedLayout !== layoutForKeymap) {
+      setSelectedLayout(layoutForKeymap);
+    }
+  }, [selectedKeymap]);
 
   useKeyHandler(setCurrentMode, currentMode, setKeyState);
 
@@ -134,7 +152,7 @@ export default function Home() {
                   keyState={
                     keyState
                   }
-                  keymap={wfrDvorakKeymap}
+                  keymap={selectedKeymap === "appleStandardKeymap" ? appleStandardKeymap : selectedKeymap === "wfrDvorakKeymap" ? wfrDvorakKeymap : undefined}
                   currentMode={
                     currentMode
                   }
