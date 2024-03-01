@@ -35,17 +35,15 @@ const CommandDisplay = () => {
         {Object.entries(keyActions).map(([key, action]) => {
           const actionDescription = action[currentMode as Mode];
           return (
-            <div className="py-1">
-              <div
-                className="flex flex-row items-center text-xs gap-2"
-                key={key}
-              >
-                <div className="px-2 whitespace-nowrap py-[2px] rounded-md text-white border border-gray-700 bg-gray-50/10">
-                  {key}
-                </div>
-                <div className="whitespace-nowrap text-gray-400">
-                  {actionDescription}
-                </div>
+            <div
+              className="flex py-1 flex-row items-center text-xs gap-2"
+              key={key}
+            >
+              <div className="px-2 whitespace-nowrap py-[2px] rounded-md text-white border border-gray-700 bg-gray-50/10">
+                {key}
+              </div>
+              <div className="whitespace-nowrap text-gray-400">
+                {actionDescription}
               </div>
             </div>
           );

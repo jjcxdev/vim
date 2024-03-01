@@ -1,6 +1,6 @@
 "use client";
 
-import Key from "./Key";
+import Key from "../components/Key";
 import { GrCommand } from "react-icons/gr";
 import { ImShift } from "react-icons/im";
 import { IoBackspaceOutline } from "react-icons/io5";
@@ -10,13 +10,11 @@ import { MdSpaceBar } from "react-icons/md";
 import { GrReturn } from "react-icons/gr";
 import { useState } from "react";
 import Image from "next/image";
-import Indicator from "./Indicators";
+import Indicator from "../components/Indicators";
 import { useMode } from "../utils/ModeContext";
 import { MAC_KEYS } from "../utils/constants";
-import { useKeyHandler } from "../utils/useKeyHandlers";
 import { MdOutlineKeyboardOptionKey } from "react-icons/md";
-
-type KeyState = Record<string, boolean>;
+import { useKeyHandler } from "../utils/useKeyHandlers";
 
 export default function Voyager() {
   const { currentMode, setCurrentMode } = useMode();

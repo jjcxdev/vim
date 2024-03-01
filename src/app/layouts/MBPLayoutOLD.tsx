@@ -1,12 +1,12 @@
 "use client";
 
-import Key from "./Key";
+import Key from "../components/Key";
 import { GrCommand } from "react-icons/gr";
 import { PiOptionBold } from "react-icons/pi";
 import { ImCtrl } from "react-icons/im";
 import { useState } from "react";
 import Image from "next/image";
-import Indicator from "./Indicators";
+import Indicator from "../components/Indicators";
 import { useMode } from "../utils/ModeContext";
 import { MAC_KEYS } from "../utils/constants";
 import { useKeyHandler } from "../utils/useKeyHandlers";

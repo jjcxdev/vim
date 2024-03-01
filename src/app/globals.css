@@ -39,23 +39,27 @@ body {
   width: 3.55rem;
 }
 
-.key-onehalf {
+.key-apple-del-tab {
   width: 5.5rem;
 }
 
-.key-threequarter {
+.key-apple-command {
+  width: 4.5rem;
+}
+
+.key-apple-return-caps {
   width: 6.5rem;
 }
 
-.key-shift {
+.key-apple-shift {
   width: 8.5rem;
 }
 
-.key-space {
-  width: 21.5rem;
+.key-apple-space {
+  width: 19rem;
 }
 
-.key-arrow {
+.key-apple-arrow {
   height: 1.5rem;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;

@@ -1,6 +1,11 @@
 import { createContext, useContext, useState } from "react";
 
-const ModeContext = createContext();
+const defaultValue = {
+  currentMode: "normal",
+  setCurrentMode: () => {},
+};
+
+const ModeContext = createContext(defaultValue);
 
 export const useMode = () => useContext(ModeContext);
 

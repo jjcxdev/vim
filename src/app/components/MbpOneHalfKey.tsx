@@ -40,7 +40,7 @@ export default function MbpOneHalfKey({
   }
 
   const isActiveInMode = activeKeys.includes(action);
-  console.log(`Is ${action} active in ${mode}? ${isActiveInMode}`);
+  // console.log(`Is ${action} active in ${mode}? ${isActiveInMode}`);
 
   if (isActiveInMode) {
     additionalModeClass = ` key-${safeMode}`; // Apply only if key is active in current mode

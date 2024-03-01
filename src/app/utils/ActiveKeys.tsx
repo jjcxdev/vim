@@ -60,7 +60,7 @@ export function getActiveKeysForMode(
   });
 
   // Debugging: Log the active keys for the given mode
-  console.log(`Active keys for mode "${mode}":`, Array.from(activeKeys));
+  // console.log(`Active keys for mode "${mode}":`, Array.from(activeKeys));
 
   return Array.from(activeKeys);
 }

@@ -11,7 +11,9 @@ export const useKeyHandler = (
 ) => {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      console.log(`Key down: ${event.key}`);
+      //console.log(`Key down: ${event.key}`);
+      const keyValue = event.shiftKey ? `${event.key}` : event.key;
+      console.log(`Key down: ${keyValue}`);
       event.preventDefault();
       setKeyState((prevState) => ({ ...prevState, [event.key]: true }));
 

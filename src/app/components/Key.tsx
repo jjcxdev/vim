@@ -8,6 +8,8 @@ import { getActiveKeysForMode } from "../utils/ActiveKeys";
 
 interface KeyProps {
   children?: ReactNode;
+  upper: ReactNode;
+  lower: ReactNode;
   actions: string[];
   mode?: "normal" | "visual" | "insert";
   isPressed?: boolean;
@@ -15,6 +17,8 @@ interface KeyProps {
 }
 
 export default function Key({
+  upper,
+  lower,
   children,
   actions = [],
   mode = "normal",
@@ -64,7 +68,10 @@ export default function Key({
         borderWidth: "1px",
       }}
     >
-      <div className="flex flex-col">{children}</div>
+      <div className="flex flex-col">
+        <div>{upper}</div>
+        <div>{lower}</div>
+      </div>
     </kbd>
   );
 }
