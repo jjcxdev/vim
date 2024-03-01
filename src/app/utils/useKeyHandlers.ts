@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 
-type KeyState = Record<string, boolean>;
-type ModeSetter = (mode: string) => void;
-type CurrentMode = string;
+export type Mode = 'normal' | 'visual' | 'insert' | undefined;
+export type KeyState = Record<string, boolean>;
+type ModeSetter = (mode: Mode) => void;
+type CurrentMode = 'normal' | 'visual' | 'insert' | undefined;
 
 export const useKeyHandler = (
   setCurrentMode: ModeSetter,

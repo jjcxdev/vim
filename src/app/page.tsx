@@ -1,30 +1,35 @@
 "use client";
-import { useEffect, useState } from "react";
-import { ModeProvider, useMode } from "./utils/ModeContext.js";
-import { KeymapProvider, useKeymap } from "./utils/KeymapContext";
-import { macBookKeymap } from "./keymaps/macbook";
-import { testKeymap } from "./keymaps/test";
-import { useKeyHandler } from "./utils/useKeyHandlers";
 
+// Layouts
+import MacBookLayout from "./layouts/Apple/MacBookLayout";
+import VoyagerLayout from "./layouts/ZSA Voyager/VoyagerLayout";
+
+// Keymaps
+import { jjcxVoyagerKeymap } from "./keymaps/Custom/jjcxVoyager";
+import { macBookStandardKeymap } from "./keymaps/Apple/MacbookStandardKeymap";
+
+// Command Display
 import CommandDisplay from "./components/CommandDisplay";
-import MacBookLayout from "./layouts/MacBookLayout";
-import AnsiLayout from "./layouts/AnsiLayout";
-import Voyager from "./layouts/VoyagerLayout";
+
+import { useEffect, useState } from "react";
+import { ModeProvider, useMode } from "./utils/ModeContext";
+import { KeymapProvider, useKeymap } from "./utils/KeymapContext";
+import { useKeyHandler } from "./utils/useKeyHandlers";
 
 type KeyState = Record<string, boolean>;
 
 export default function Home() {
   const [selectedLayout, setSelectedLayout] = useState("MacBookLayout");
-  const [selectedKeymap, setSelectedKeymap] = useState("macBookKeymap");
+  const [selectedKeymap, setSelectedKeymap] = useState("macBookStandardKeymap");
   const { currentMode, setCurrentMode } = useMode();
   const { setKeymap } = useKeymap();
   const [keyState, setKeyState] = useState<KeyState>({});
 
   useEffect(() => {
-    if (selectedKeymap === "MacBook") {
-      setKeymap(macBookKeymap);
+    if (selectedKeymap === "macBookStandardKeymap") {
+      setKeymap(macBookStandardKeymap);
     } else {
-      setKeymap(testKeymap);
+      setKeymap(jjcxVoyagerKeymap);
     }
   }, [selectedKeymap, setKeymap]);
 
@@ -51,15 +56,11 @@ export default function Home() {
                   )
                 }
               >
-                <option value="Voyager">
-                  ZSA
-                  Voyager
-                </option>
-                <option value="MacBook">
+                <option value="MacBookLayout">
                   MacBook
                 </option>
-                <option value="ANSI">
-                  ANSI
+                <option value="VoyagerLayout">
+                  ZSA Voyager
                 </option>
               </select>
             </div>
@@ -79,48 +80,33 @@ export default function Home() {
                   )
                 }
               >
-                <option value="macBookKeymap">
+                <option value="macBookStandardKeymap">
                   MacBook keymap
                 </option>
-                <option value="testKeymap">
-                  TEST
+                <option value="jjcxVoyagerKeymap">
+                  jjcx custom
                 </option>
               </select>
             </div>
           </div>
           <div className="h-[425px] w-[950px] flex justify-center items-center',">
             {selectedLayout ===
-              "Voyager" && (
-                <Voyager />
-              )}
-            {selectedLayout === "ANSI" && (
-              <AnsiLayout
-                keyState={
-                  keyState
-                }
-                keymap={
-                  selectedKeymap ===
-                    "macBookKeymap"
-                    ? macBookKeymap
-                    : testKeymap
-                }
-                currentMode={
-                  currentMode
-                }
-              />
-            )}
-            {selectedLayout ===
-              "MacBook" && (
+              "MacBookLayout" && (
                 <MacBookLayout
                   keyState={
                     keyState
                   }
-                  keymap={
-                    selectedKeymap ===
-                      "macBookKeymap"
-                      ? macBookKeymap
-                      : testKeymap
+                  keymap={macBookStandardKeymap}
+                  currentMode={
+                    currentMode
                   }
+                />
+              )}
+            {selectedLayout ===
+              "VoyagerLayout" && (
+                <VoyagerLayout
+                  keyState={keyState}
+                  keymap={jjcxVoyagerKeymap}
                   currentMode={
                     currentMode
                   }

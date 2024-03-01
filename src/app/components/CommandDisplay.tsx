@@ -1,4 +1,4 @@
-import { useMode } from "../utils/ModeContext.js";
+import { useMode } from "../utils/ModeContext";
 import {
   InsertModeKeyLabels,
   KeyAction,

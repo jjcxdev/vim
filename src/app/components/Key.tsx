@@ -68,7 +68,7 @@ export default function Key({
         borderWidth: "1px",
       }}
     >
-      <div className="flex flex-col">
+      <div className="flex justify-center items-center flex-col">
         <div>{upper}</div>
         <div>{lower}</div>
       </div>

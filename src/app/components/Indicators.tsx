@@ -1,6 +1,6 @@
 type IndicatorProps = {
   mode: string;
-  currentMode: string;
+  currentMode?: string;
 };
 
 export default function Indicator({ mode, currentMode }: IndicatorProps) {

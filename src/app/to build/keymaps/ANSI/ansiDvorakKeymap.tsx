@@ -8,27 +8,36 @@ export interface KeyConfig {
   isPressed: boolean;
 }
 
-export const testKeymap: Record<string, KeyConfig> = {
+export const macBookKeymap: Record<string, KeyConfig> = {
+  /* -------- First Row -------- */
+
+  DANCE_00: {
+    id: "DANCE_00",
+    upper: "Esc",
+    lower: "",
+    actions: ["Escape"],
+    isPressed: false,
+  },
   /* -------- First Row -------- */
 
   DANCE_01: {
     id: "DANCE_01",
-    upper: "TEST",
-    lower: "TEST",
-    actions: ["Escape"],
+    upper: "~",
+    lower: "`",
+    actions: ["~", "`"],
     isPressed: false,
   },
   DANCE_02: {
     id: "DANCE_02",
-    upper: "TEST",
-    lower: "TEST",
+    upper: "!",
+    lower: "1",
     actions: ["!", "1"],
     isPressed: false,
   },
   DANCE_03: {
     id: "DANCE_03",
-    upper: "",
-    lower: "",
+    upper: "@",
+    lower: "2",
     actions: ["@", "2"],
     isPressed: false,
   },
@@ -106,104 +115,104 @@ export const testKeymap: Record<string, KeyConfig> = {
     id: "DANCE_0E",
     upper: "",
     lower: "delete",
-    actions: ["delete"],
+    actions: ["Backspace"],
     isPressed: false,
   },
 
   /* -------- Second Row -------- */
 
-  DANCE_11: {
+  DANCE_10: {
     id: "DANCE_11",
     upper: "",
     lower: "tab",
     actions: ["Tab"],
     isPressed: false,
   },
-  DANCE_12: {
+  DANCE_11: {
     id: "DANCE_12",
     upper: "",
     lower: "Q",
     actions: ["q"],
     isPressed: false,
   },
-  DANCE_13: {
+  DANCE_12: {
     id: "DANCE_13",
     upper: "",
     lower: "W",
     actions: ["w"],
     isPressed: false,
   },
-  DANCE_14: {
+  DANCE_13: {
     id: "DANCE_14",
     upper: "",
     lower: "E",
     actions: ["e"],
     isPressed: false,
   },
-  DANCE_15: {
+  DANCE_14: {
     id: "DANCE_15",
     upper: "",
     lower: "R",
     actions: ["r"],
     isPressed: false,
   },
-  DANCE_16: {
+  DANCE_15: {
     id: "DANCE_16",
     upper: "",
     lower: "T",
     actions: ["t"],
     isPressed: false,
   },
-  DANCE_17: {
+  DANCE_16: {
     id: "DANCE_17",
     upper: "",
     lower: "Y",
     actions: ["y"],
     isPressed: false,
   },
-  DANCE_18: {
+  DANCE_17: {
     id: "DANCE_18",
     upper: "",
     lower: "U",
     actions: ["u"],
     isPressed: false,
   },
-  DANCE_19: {
+  DANCE_18: {
     id: "DANCE_19",
     upper: "",
     lower: "I",
-    actions: ["I"],
+    actions: ["i"],
     isPressed: false,
   },
-  DANCE_1A: {
+  DANCE_19: {
     id: "DANCE_1A",
     upper: "",
     lower: "O",
     actions: ["o"],
     isPressed: false,
   },
-  DANCE_1B: {
+  DANCE_1A: {
     id: "DANCE_1B",
     upper: "",
     lower: "P",
     actions: ["p"],
     isPressed: false,
   },
-  DANCE_1C: {
+  DANCE_1B: {
     id: "DANCE_1C",
     upper: "{",
     lower: "[",
     actions: ["{", "["],
     isPressed: false,
   },
-  DANCE_1D: {
+  DANCE_1C: {
     id: "DANCE_1D",
     upper: "}",
     lower: "]",
     actions: ["}", "]"],
     isPressed: false,
   },
-  DANCE_1E: {
+  DANCE_1D: {
     id: "DANCE_1E",
     upper: "|",
     lower: "\\",
@@ -213,91 +222,91 @@ export const testKeymap: Record<string, KeyConfig> = {
 
   /* -------- Third Row -------- */
 
-  DANCE_21: {
+  DANCE_20: {
     id: "DANCE_21",
     upper: "",
-    lower: "cap lock",
-    actions: ["Capslock"],
+    lower: "caps",
+    actions: ["CapsLock"],
     isPressed: false,
   },
-  DANCE_22: {
+  DANCE_21: {
     id: "DANCE_22",
     upper: "",
     lower: "A",
     actions: ["a"],
     isPressed: false,
   },
-  DANCE_23: {
+  DANCE_22: {
     id: "DANCE_23",
     upper: "",
     lower: "S",
     actions: ["s"],
     isPressed: false,
   },
-  DANCE_24: {
+  DANCE_23: {
     id: "DANCE_24",
     upper: "",
     lower: "D",
     actions: ["d"],
     isPressed: false,
   },
-  DANCE_25: {
+  DANCE_24: {
     id: "DANCE_25",
     upper: "",
     lower: "F",
     actions: ["f"],
     isPressed: false,
   },
-  DANCE_26: {
+  DANCE_25: {
     id: "DANCE_26",
     upper: "",
     lower: "G",
     actions: ["g"],
     isPressed: false,
   },
-  DANCE_27: {
+  DANCE_26: {
     id: "DANCE_27",
     upper: "",
     lower: "H",
     actions: ["h"],
     isPressed: false,
   },
-  DANCE_28: {
+  DANCE_27: {
     id: "DANCE_28",
     upper: "",
     lower: "J",
     actions: ["j"],
     isPressed: false,
   },
-  DANCE_29: {
+  DANCE_28: {
     id: "DANCE_29",
     upper: "",
     lower: "K",
     actions: ["k"],
     isPressed: false,
   },
-  DANCE_2A: {
+  DANCE_29: {
     id: "DANCE_2A",
     upper: "",
     lower: "L",
     actions: ["l"],
     isPressed: false,
   },
-  DANCE_2B: {
+  DANCE_2A: {
     id: "DANCE_2B",
     upper: ":",
     lower: ";",
     actions: [":", ";"],
     isPressed: false,
   },
-  DANCE_2C: {
+  DANCE_2B: {
     id: "DANCE_2C",
     upper: '"',
     lower: "'",
     actions: ['"', "'"],
     isPressed: false,
   },
-  DANCE_2D: {
+  DANCE_2C: {
     id: "DANCE_2D",
     upper: "",
     lower: "return",
@@ -307,84 +316,84 @@ export const testKeymap: Record<string, KeyConfig> = {
 
   /* -------- Fourth Row -------- */
 
-  DANCE_31: {
+  DANCE_30: {
     id: "DANCE_31",
     upper: "",
     lower: "shift",
     actions: ["Shift"],
     isPressed: false,
   },
-  DANCE_32: {
+  DANCE_31: {
     id: "DANCE_32",
     upper: "",
     lower: "Z",
     actions: ["z"],
     isPressed: false,
   },
-  DANCE_33: {
+  DANCE_32: {
     id: "DANCE_33",
     upper: "",
     lower: "X",
     actions: ["x"],
     isPressed: false,
   },
-  DANCE_34: {
+  DANCE_33: {
     id: "DANCE_34",
     upper: "",
     lower: "C",
     actions: ["c"],
     isPressed: false,
   },
-  DANCE_35: {
+  DANCE_34: {
     id: "DANCE_35",
     upper: "",
     lower: "V",
     actions: ["v"],
     isPressed: false,
   },
-  DANCE_36: {
+  DANCE_35: {
     id: "DANCE_36",
     upper: "",
     lower: "B",
     actions: ["b"],
     isPressed: false,
   },
-  DANCE_37: {
+  DANCE_36: {
     id: "DANCE_37",
     upper: "",
     lower: "N",
     actions: ["n"],
     isPressed: false,
   },
-  DANCE_38: {
+  DANCE_37: {
     id: "DANCE_38",
     upper: "",
     lower: "M",
     actions: ["m"],
     isPressed: false,
   },
-  DANCE_39: {
+  DANCE_38: {
     id: "DANCE_39",
     upper: "<",
     lower: ",",
     actions: ["<", ","],
     isPressed: false,
   },
-  DANCE_3A: {
+  DANCE_39: {
     id: "DANCE_3A",
     upper: ">",
     lower: ".",
     actions: [">", "."],
     isPressed: false,
   },
-  DANCE_3B: {
+  DANCE_3A: {
     id: "DANCE_3B",
     upper: "?",
     lower: "/",
     actions: ["?", "/"],
     isPressed: false,
   },
-  DANCE_3C: {
+  DANCE_3B: {
     id: "DANCE_3C",
     upper: "",
     lower: "shift",
@@ -394,77 +403,77 @@ export const testKeymap: Record<string, KeyConfig> = {
 
   /* -------- Fifth Row -------- */
 
-  DANCE_41: {
+  DANCE_40: {
     id: "DANCE_41",
     upper: "",
     lower: "fn",
-    actions: ["Function"],
+    actions: [""],
     isPressed: false,
   },
-  DANCE_42: {
+  DANCE_41: {
     id: "DANCE_42",
     upper: "",
     lower: "control",
     actions: ["Control"],
     isPressed: false,
   },
-  DANCE_43: {
+  DANCE_42: {
     id: "DANCE_43",
     upper: "",
     lower: "option",
-    actions: ["Option"],
+    actions: ["Alt"],
     isPressed: false,
   },
-  DANCE_44: {
+  DANCE_43: {
     id: "DANCE_44",
     upper: "",
     lower: "command",
-    actions: ["Command"],
+    actions: ["Meta"],
     isPressed: false,
   },
-  DANCE_45: {
+  DANCE_44: {
     id: "DANCE_45",
     upper: "",
     lower: "",
-    actions: ["Space"],
+    actions: [" "],
     isPressed: false,
   },
-  DANCE_46: {
+  DANCE_45: {
     id: "DANCE_46",
     upper: "",
     lower: "command",
-    actions: ["Command"],
+    actions: ["Meta"],
     isPressed: false,
   },
-  DANCE_47: {
+  DANCE_46: {
     id: "DANCE_47",
     upper: "",
     lower: "option",
-    actions: ["Option"],
+    actions: ["Alt"],
     isPressed: false,
   },
-  DANCE_48: {
+  DANCE_47: {
     id: "DANCE_48",
     upper: "",
     lower: "left",
     actions: ["ArrowLeft"],
     isPressed: false,
   },
-  DANCE_49: {
+  DANCE_48: {
     id: "DANCE_49",
     upper: "",
     lower: "up",
     actions: ["ArrowUp"],
     isPressed: false,
   },
-  DANCE_4A: {
+  DANCE_49: {
     id: "DANCE_4A",
     upper: "",
     lower: "down",
     actions: ["ArrowDown"],
     isPressed: false,
   },
-  DANCE_4B: {
+  DANCE_4A: {
     id: "DANCE_4B",
     upper: "",
     lower: "right",
