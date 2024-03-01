@@ -3,10 +3,13 @@
 // Layouts
 import MacBookLayout from "./layouts/Apple/MacBookLayout";
 import VoyagerLayout from "./layouts/ZSA Voyager/VoyagerLayout";
+import AppleLayout from "./layouts/Apple/AppleLayout";
 
 // Keymaps
 import { jjcxVoyagerKeymap } from "./keymaps/Custom/jjcxVoyager";
 import { macBookStandardKeymap } from "./keymaps/Apple/macbookStandardKeymap";
+import { appleStandardKeymap } from "./keymaps/Apple/appleStandardKeymap";
+import { wfrDvorakKeymap } from "./keymaps/Custom/wfrodriguezdvorak";
 
 // Command Display
 import CommandDisplay from "./components/CommandDisplay";
@@ -25,13 +28,40 @@ export default function Home() {
   const { setKeymap } = useKeymap();
   const [keyState, setKeyState] = useState<KeyState>({});
 
+  type LayoutKeymapMapping = {
+    [key: string]: string[];
+  };
+
+  type DisplayNames = {
+    [key: string]: string;
+  };
+
+  const layoutKeymapMapping: LayoutKeymapMapping = {
+    MacBookLayout: ["macBookStandardKeymap"],
+    AppleLayout: ["appleStandardKeymap", "wfrDvorakKeymap"],
+    VoyagerLayout: ["jjcxVoyagerKeymap"],
+  };
+
+  const layoutDisplayNames: DisplayNames = {
+    MacBookLayout: "MacBook",
+    AppleLayout: "Apple",
+    VoyagerLayout: "ZSA Voyager",
+  };
+
+  const keymapDisplayNames: DisplayNames = {
+    macBookStandardKeymap: "MacBook",
+    appleStandardKeymap: "Apple",
+    jjcxVoyagerKeymap: "jjcx custom",
+    wfrDvorakKeymap: "WFR Dvorak"
+  };
+
+
   useEffect(() => {
-    if (selectedKeymap === "macBookStandardKeymap") {
-      setKeymap(macBookStandardKeymap);
-    } else {
-      setKeymap(jjcxVoyagerKeymap);
+    const availableKeymaps = layoutKeymapMapping[selectedLayout];
+    if (availableKeymaps && availableKeymaps.length > 0) {
+      setSelectedKeymap(availableKeymaps[0]);
     }
-  }, [selectedKeymap, setKeymap]);
+  }, [selectedLayout]);
 
   useKeyHandler(setCurrentMode, currentMode, setKeyState);
 
@@ -56,12 +86,10 @@ export default function Home() {
                   )
                 }
               >
-                <option value="MacBookLayout">
-                  MacBook
-                </option>
-                <option value="VoyagerLayout">
-                  ZSA Voyager
-                </option>
+                {Object.keys(layoutKeymapMapping).map((layout) => (
+                  <option key={layout} value={layout}>
+                    {layoutDisplayNames[layout]}                 </option>
+                ))}
               </select>
             </div>
             {/* Select keymaps in ./keymaps/ which will populate the layouts*/}
@@ -80,12 +108,10 @@ export default function Home() {
                   )
                 }
               >
-                <option value="macBookStandardKeymap">
-                  MacBook
-                </option>
-                <option value="jjcxVoyagerKeymap">
-                  jjcx custom
-                </option>
+                {layoutKeymapMapping[selectedLayout]?.map((keymap) => (
+                  <option key={keymap} value={keymap}>
+                    {keymapDisplayNames[keymap]}                  </option>
+                ))}
               </select>
             </div>
           </div>
@@ -97,6 +123,18 @@ export default function Home() {
                     keyState
                   }
                   keymap={macBookStandardKeymap}
+                  currentMode={
+                    currentMode
+                  }
+                />
+              )}
+            {selectedLayout ===
+              "AppleLayout" && (
+                <AppleLayout
+                  keyState={
+                    keyState
+                  }
+                  keymap={wfrDvorakKeymap}
                   currentMode={
                     currentMode
                   }
