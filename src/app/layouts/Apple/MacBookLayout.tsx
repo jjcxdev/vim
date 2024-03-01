@@ -11,7 +11,7 @@ interface MacBookLayoutProps {
   keymap: Record<string, KeyConfig>;
 }
 
-export default function MacBookLayout({ keymap }: MacBookLayoutProps) {
+export default function MacBookLayout({ keymap = {} }: MacBookLayoutProps) {
   const { currentMode, setCurrentMode } = useMode();
   const [keyState, setKeyState] = useState<Record<string, boolean>>({});
 

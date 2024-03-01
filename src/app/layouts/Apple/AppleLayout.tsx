@@ -11,11 +11,13 @@ interface AppleLayoutProps {
   keymap: Record<string, KeyConfig>;
 }
 
-export default function AppleLayout({ keymap }: AppleLayoutProps) {
+export default function AppleLayout({ keymap = {} }: AppleLayoutProps) {
   const { currentMode, setCurrentMode } = useMode();
   const [keyState, setKeyState] = useState<Record<string, boolean>>({});
 
   useKeyHandler(setCurrentMode, currentMode, setKeyState);
+
+  console.log(keymap);
 
   return (
     <main className="flex flex-col gap-2 min-w-[925px]">
@@ -26,7 +28,7 @@ export default function AppleLayout({ keymap }: AppleLayoutProps) {
           isPressed={
             keymap["DANCE_50"]?.actions.some((action) => keyState[action]) ||
             false
-          } mode={currentMode} className="rounded-s-lg"
+          } mode={currentMode}
         />
         <Key
           {...(keymap["DANCE_51"] || {})}

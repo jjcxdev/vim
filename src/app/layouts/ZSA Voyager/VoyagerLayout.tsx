@@ -11,7 +11,7 @@ interface VoyagerLayoutProps {
   keymap: Record<string, KeyConfig>;
 }
 
-export default function VoyagerLayout({ keymap }: VoyagerLayoutProps) {
+export default function VoyagerLayout({ keymap = {} }: VoyagerLayoutProps) {
   const { currentMode, setCurrentMode } = useMode();
   const [keyState, setKeyState] = useState<Record<string, boolean>>({});
 
