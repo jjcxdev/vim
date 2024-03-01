@@ -64,7 +64,7 @@ export const jjcxVoyagerKeymap: Record<string, KeyConfig> = {
   DANCE_06: {
     id: "DANCE_06",
     upper: "",
-    lower: "Esc",
+    lower: "esc",
     actions: ["Escape"],
     isPressed: false,
   },
@@ -360,7 +360,7 @@ export const jjcxVoyagerKeymap: Record<string, KeyConfig> = {
   DANCE_3B: {
     id: "DANCE_3B",
     upper: "",
-    lower: "control",
+    lower: <PiControl />,
     actions: ["Control"],
     isPressed: false,
   },

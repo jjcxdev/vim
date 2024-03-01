@@ -109,7 +109,7 @@ export default function VoyagerLayout({ keymap }: VoyagerLayoutProps) {
                 } mode={currentMode}
               />
               <Key
-                {...(keymap["DANCE_23"] || {})}
+                {...(keymap["DANCE_32"] || {})}
                 isPressed={
                   keymap["DANCE_23"]?.actions.some((action) => keyState[action]) ||
                   false

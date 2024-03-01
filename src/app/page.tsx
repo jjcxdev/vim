@@ -6,7 +6,7 @@ import VoyagerLayout from "./layouts/ZSA Voyager/VoyagerLayout";
 
 // Keymaps
 import { jjcxVoyagerKeymap } from "./keymaps/Custom/jjcxVoyager";
-import { macBookStandardKeymap } from "./keymaps/Apple/MacbookStandardKeymap";
+import { macBookStandardKeymap } from "./keymaps/Apple/macbookStandardKeymap";
 
 // Command Display
 import CommandDisplay from "./components/CommandDisplay";
@@ -81,7 +81,7 @@ export default function Home() {
                 }
               >
                 <option value="macBookStandardKeymap">
-                  MacBook keymap
+                  MacBook
                 </option>
                 <option value="jjcxVoyagerKeymap">
                   jjcx custom
