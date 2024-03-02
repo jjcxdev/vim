@@ -20,7 +20,22 @@ export default function AppleLayout({ keymap = {} }: AppleLayoutProps) {
   console.log(keymap);
 
   return (
-    <main className="flex flex-col gap-2 min-w-[925px]">
+    <main className="flex justify-center flex-col gap-2 min-w-fit">
+      {/*----- Indicators and Vim logo ----- */}
+      <div className="flex w-full justify-end gap-4 items-center">
+        <div className="flex h-8 gap-4">
+          <Indicator mode="Normal" currentMode={currentMode} />
+          <Indicator mode="Visual" currentMode={currentMode} />
+          <Indicator mode="Insert" currentMode={currentMode} />
+        </div>
+        <Image
+          src="/images/Vimlogo.svg"
+          alt="vim logo"
+          height={50}
+          width={50}
+        />
+      </div>
+
       {/* ----- UPPER Row ----- */}
       <div className="keyboard-row gap-2 justify-between w-full flex">
         <Key
@@ -28,7 +43,7 @@ export default function AppleLayout({ keymap = {} }: AppleLayoutProps) {
           isPressed={
             keymap["DANCE_50"]?.actions.some((action) => keyState[action]) ||
             false
-          } mode={currentMode}
+          } mode={currentMode} className="key-apple-tl-rnd"
         />
         <Key
           {...(keymap["DANCE_51"] || {})}
@@ -119,23 +134,8 @@ export default function AppleLayout({ keymap = {} }: AppleLayoutProps) {
           isPressed={
             keymap["DANCE_5D"]?.actions.some((action) => keyState[action]) ||
             false
-          } mode={currentMode}
+          } mode={currentMode} className="key-apple-tr-rnd"
         />
-        {/* --- Indicators and Vim logo ----       
-        <div className="flex gap-4 items-center">
-          <div className="flex h-8 gap-4">
-            <Indicator mode="Normal" currentMode={currentMode} />
-            <Indicator mode="Visual" currentMode={currentMode} />
-            <Indicator mode="Insert" currentMode={currentMode} />
-          </div>
-          <Image
-            src="/images/Vimlogo.svg"
-            alt="vim logo"
-            height={50}
-            width={50}
-          />
-        </div>
-        */}
       </div>
       {/* ----- First Row ----- */}
       <div className="keyboard-row gap-2 flex">
@@ -532,7 +532,7 @@ export default function AppleLayout({ keymap = {} }: AppleLayoutProps) {
           isPressed={
             keymap["DANCE_40"]?.actions.some((action) => keyState[action]) ||
             false
-          } mode={currentMode}
+          } mode={currentMode} className="key-apple-bl-rnd"
         />
         <Key
           {...(keymap["DANCE_41"] || {})}
@@ -576,14 +576,13 @@ export default function AppleLayout({ keymap = {} }: AppleLayoutProps) {
             false
           } mode={currentMode}
         />
-        <div className="flex gap-1 items-end">
+        <div className="flex gap-2 items-end">
           <Key
             {...(keymap["DANCE_47"] || {})}
             isPressed={
               keymap["DANCE_47"]?.actions.some((action) => keyState[action]) ||
               false
             } mode={currentMode}
-            className="key-apple-arrow"
           /> <div className="flex gap-1 flex-col">
             <Key
               {...(keymap["DANCE_48"] || {})}
@@ -591,7 +590,7 @@ export default function AppleLayout({ keymap = {} }: AppleLayoutProps) {
                 keymap["DANCE_48"]?.actions.some((action) => keyState[action]) ||
                 false
               } mode={currentMode}
-              className="key-apple-arrow"
+              className="key-apple-arrow key-apple-arrow-top"
             />
             <Key
               {...(keymap["DANCE_49"] || {})}
@@ -599,7 +598,7 @@ export default function AppleLayout({ keymap = {} }: AppleLayoutProps) {
                 keymap["DANCE_49"]?.actions.some((action) => keyState[action]) ||
                 false
               } mode={currentMode}
-              className="key-apple-arrow"
+              className="key-apple-arrow key-apple-arrow-bottom"
             />
           </div>
           <Key
@@ -608,7 +607,7 @@ export default function AppleLayout({ keymap = {} }: AppleLayoutProps) {
               keymap["DANCE_4A"]?.actions.some((action) => keyState[action]) ||
               false
             } mode={currentMode}
-            className="key-apple-arrow"
+            className="key-apple-br-rnd"
           />
         </div>
       </div>

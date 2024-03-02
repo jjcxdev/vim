@@ -7,27 +7,23 @@ import { useKeyHandler } from "@/app/utils/useKeyHandlers";
 import Key from "@/app/components/Key";
 import Indicator from "@/app/components/Indicators";
 
-interface MacBookLayoutProps {
+interface AnsiSixtyFiveLayoutProps {
   keymap: Record<string, KeyConfig>;
 }
 
-export default function MacBookLayout({ keymap = {} }: MacBookLayoutProps) {
+export default function AnsiSixtyFiveLayout({ keymap = {} }: AnsiSixtyFiveLayoutProps) {
   const { currentMode, setCurrentMode } = useMode();
   const [keyState, setKeyState] = useState<Record<string, boolean>>({});
 
   useKeyHandler(setCurrentMode, currentMode, setKeyState);
 
+  console.log(keymap);
+
   return (
-    <main className="flex flex-col justify-center gap-2 min-w-fit">
+    <main className="flex justify-center flex-col gap-1 min-w-full">
       {/* ----- UPPER Row ----- */}
-      <div className="keyboard-row gap-2 justify-between w-full flex">
-        <Key
-          {...(keymap["DANCE_00"] || {})}
-          isPressed={
-            keymap["DANCE_00"]?.actions.some((action) => keyState[action]) ||
-            false
-          } mode={currentMode}
-        />
+      <div className="keyboard-row gap-1 justify-end w-full flex">
+        {/* ----- Indicators and Vim logo ----- */}
         <div className="flex gap-4 items-center">
           <div className="flex h-8 gap-4">
             <Indicator mode="Normal" currentMode={currentMode} />
@@ -41,9 +37,10 @@ export default function MacBookLayout({ keymap = {} }: MacBookLayoutProps) {
             width={50}
           />
         </div>
+
       </div>
       {/* ----- First Row ----- */}
-      <div className="keyboard-row gap-2 flex">
+      <div className="keyboard-row gap-1 flex">
         <Key
           {...(keymap["DANCE_01"] || {})}
           isPressed={
@@ -140,19 +137,26 @@ export default function MacBookLayout({ keymap = {} }: MacBookLayoutProps) {
           isPressed={
             keymap["DANCE_0E"]?.actions.some((action) => keyState[action]) ||
             false
-          } mode={currentMode} className="key-apple-del-tab"
+          } mode={currentMode} className="key-sf-backspace"
+        />
+        <Key
+          {...(keymap["DANCE_0F"] || {})}
+          isPressed={
+            keymap["DANCE_0F"]?.actions.some((action) => keyState[action]) ||
+            false
+          } mode={currentMode}
         />
       </div>
 
       {/* ----- Second Row ----- */}
 
-      <div className="keyboard-row gap-2 flex">
+      <div className="keyboard-row gap-1 flex">
         <Key
           {...(keymap["DANCE_10"] || {})}
           isPressed={
             keymap["DANCE_10"]?.actions.some((action) => keyState[action]) ||
             false
-          } mode={currentMode} className="key-apple-del-tab"
+          } mode={currentMode} className="key-sf-tab"
         />
         <Key
           {...(keymap["DANCE_11"] || {})}
@@ -243,18 +247,25 @@ export default function MacBookLayout({ keymap = {} }: MacBookLayoutProps) {
           isPressed={
             keymap["DANCE_1D"]?.actions.some((action) => keyState[action]) ||
             false
+          } mode={currentMode} className="key-sf-tab"
+        />
+        <Key
+          {...(keymap["DANCE_1E"] || {})}
+          isPressed={
+            keymap["DANCE_1E"]?.actions.some((action) => keyState[action]) ||
+            false
           } mode={currentMode}
         />
       </div>
 
       {/* ----- Third Row ----- */}
-      <div className="keyboard-row gap-2 flex">
+      <div className="keyboard-row gap-1 flex">
         <Key
           {...(keymap["DANCE_20"] || {})}
           isPressed={
             keymap["DANCE_20"]?.actions.some((action) => keyState[action]) ||
             false
-          } mode={currentMode} className="key-apple-return-caps"
+          } mode={currentMode} className="key-sf-caps"
         />
         <Key
           {...(keymap["DANCE_21"] || {})}
@@ -338,18 +349,25 @@ export default function MacBookLayout({ keymap = {} }: MacBookLayoutProps) {
           isPressed={
             keymap["DANCE_2C"]?.actions.some((action) => keyState[action]) ||
             false
-          } mode={currentMode} className="key-apple-return-caps"
+          } mode={currentMode} className="key-sf-return"
+        />
+        <Key
+          {...(keymap["DANCE_2D"] || {})}
+          isPressed={
+            keymap["DANCE_2D"]?.actions.some((action) => keyState[action]) ||
+            false
+          } mode={currentMode}
         />
       </div>
 
       {/* ----- Fourth Row ----- */}
-      <div className="keyboard-row gap-2 flex">
+      <div className="keyboard-row gap-1 flex">
         <Key
           {...(keymap["DANCE_30"] || {})}
           isPressed={
             keymap["DANCE_30"]?.actions.some((action) => keyState[action]) ||
             false
-          } mode={currentMode} className="key-apple-shift"
+          } mode={currentMode} className="key-sf-shift"
         />
         <Key
           {...(keymap["DANCE_31"] || {})}
@@ -426,53 +444,67 @@ export default function MacBookLayout({ keymap = {} }: MacBookLayoutProps) {
           isPressed={
             keymap["DANCE_3B"]?.actions.some((action) => keyState[action]) ||
             false
-          } mode={currentMode} className="key-apple-shift"
+          } mode={currentMode} className="key-sf-tab"
+        />
+        <Key
+          {...(keymap["DANCE_3C"] || {})}
+          isPressed={
+            keymap["DANCE_3C"]?.actions.some((action) => keyState[action]) ||
+            false
+          } mode={currentMode}
+        />
+        <Key
+          {...(keymap["DANCE_3D"] || {})}
+          isPressed={
+            keymap["DANCE_3D"]?.actions.some((action) => keyState[action]) ||
+            false
+          } mode={currentMode}
         />
       </div>
 
       {/* ----- Fifth Row ----- */}
-      <div className="keyboard-row gap-2 flex">
+      <div className="keyboard-row gap-1 flex">
         <Key
           {...(keymap["DANCE_40"] || {})}
           isPressed={
             keymap["DANCE_40"]?.actions.some((action) => keyState[action]) ||
             false
-          } mode={currentMode}
+          } mode={currentMode} className="key-sf-meta"
         />
         <Key
           {...(keymap["DANCE_41"] || {})}
           isPressed={
             keymap["DANCE_41"]?.actions.some((action) => keyState[action]) ||
             false
-          } mode={currentMode}
+          } mode={currentMode} className="key-sf-meta"
         />
         <Key
           {...(keymap["DANCE_42"] || {})}
           isPressed={
             keymap["DANCE_42"]?.actions.some((action) => keyState[action]) ||
             false
-          } mode={currentMode}
+          } mode={currentMode} className="key-sf-meta"
         />
         <Key
           {...(keymap["DANCE_43"] || {})}
           isPressed={
             keymap["DANCE_43"]?.actions.some((action) => keyState[action]) ||
             false
-          } mode={currentMode} className="key-apple-command"
+          } mode={currentMode} className="key-sf-space"
         />
         <Key
           {...(keymap["DANCE_44"] || {})}
           isPressed={
             keymap["DANCE_44"]?.actions.some((action) => keyState[action]) ||
             false
-          } mode={currentMode} className="key-apple-space"
+          } mode={currentMode}
         />
         <Key
           {...(keymap["DANCE_45"] || {})}
           isPressed={
             keymap["DANCE_45"]?.actions.some((action) => keyState[action]) ||
             false
-          } mode={currentMode} className="key-apple-command"
+          } mode={currentMode}
         />
         <Key
           {...(keymap["DANCE_46"] || {})}
@@ -481,41 +513,26 @@ export default function MacBookLayout({ keymap = {} }: MacBookLayoutProps) {
             false
           } mode={currentMode}
         />
-        <div className="flex gap-2 items-end">
-          <Key
-            {...(keymap["DANCE_47"] || {})}
-            isPressed={
-              keymap["DANCE_47"]?.actions.some((action) => keyState[action]) ||
-              false
-            } mode={currentMode}
-            className="key-apple-arrow key-apple-arrow-bottom key-apple-arrow-side"
-          /> <div className="flex gap-1 flex-col">
-            <Key
-              {...(keymap["DANCE_48"] || {})}
-              isPressed={
-                keymap["DANCE_48"]?.actions.some((action) => keyState[action]) ||
-                false
-              } mode={currentMode}
-              className="key-apple-arrow key-apple-arrow-top"
-            />
-            <Key
-              {...(keymap["DANCE_49"] || {})}
-              isPressed={
-                keymap["DANCE_49"]?.actions.some((action) => keyState[action]) ||
-                false
-              } mode={currentMode}
-              className="key-apple-arrow key-apple-arrow-bottom"
-            />
-          </div>
-          <Key
-            {...(keymap["DANCE_4A"] || {})}
-            isPressed={
-              keymap["DANCE_4A"]?.actions.some((action) => keyState[action]) ||
-              false
-            } mode={currentMode}
-            className="key-apple-arrow key-apple-arrow-bottom key-apple-arrow-side"
-          />
-        </div>
+        <Key
+          {...(keymap["DANCE_47"] || {})}
+          isPressed={
+            keymap["DANCE_47"]?.actions.some((action) => keyState[action]) ||
+            false
+          } mode={currentMode}
+        />             <Key
+          {...(keymap["DANCE_48"] || {})}
+          isPressed={
+            keymap["DANCE_48"]?.actions.some((action) => keyState[action]) ||
+            false
+          } mode={currentMode}
+        />
+        <Key
+          {...(keymap["DANCE_49"] || {})}
+          isPressed={
+            keymap["DANCE_49"]?.actions.some((action) => keyState[action]) ||
+            false
+          } mode={currentMode}
+        />
       </div>
     </main>
   );

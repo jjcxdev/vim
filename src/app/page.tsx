@@ -4,11 +4,13 @@
 import MacBookLayout from "./layouts/Apple/MacBookLayout";
 import VoyagerLayout from "./layouts/ZSA Voyager/VoyagerLayout";
 import AppleLayout from "./layouts/Apple/AppleLayout";
+import AnsiSixtyFiveLayout from "./layouts/ANSI/AnsiSixtyFiveLayout";
 
 // Keymaps
 import { jjcxVoyagerKeymap } from "./keymaps/Custom/jjcxVoyager";
 import { macBookStandardKeymap } from "./keymaps/Apple/macbookStandardKeymap";
 import { appleStandardKeymap } from "./keymaps/Apple/appleStandardKeymap";
+import { ansiSixtyFiveKeymap } from "./keymaps/ANSI/ansiSixtyFiveKeymap";
 import { wfrDvorakKeymap } from "./keymaps/Custom/wfrodriguezdvorak";
 
 // Command Display
@@ -38,21 +40,25 @@ export default function Home() {
 
   const layoutKeymapMapping: LayoutKeymapMapping = {
     MacBookLayout: ["macBookStandardKeymap"],
-    AppleLayout: ["appleStandardKeymap", "wfrDvorakKeymap"],
+    AppleLayout: ["appleStandardKeymap"],
     VoyagerLayout: ["jjcxVoyagerKeymap"],
+    AnsiSixtyFiveLayout: ["ansiSixtyFiveKeymap"],
+    // IsoLayout: ["wfrDvorakKeymap"],
   };
 
   const layoutDisplayNames: DisplayNames = {
     MacBookLayout: "MacBook",
     AppleLayout: "Apple",
     VoyagerLayout: "ZSA Voyager",
+    AnsiSixtyFiveLayout: "ANSI 65%",
   };
 
   const keymapDisplayNames: DisplayNames = {
     macBookStandardKeymap: "MacBook",
     appleStandardKeymap: "Apple",
     jjcxVoyagerKeymap: "jjcx custom",
-    wfrDvorakKeymap: "WFR Dvorak"
+    wfrDvorakKeymap: "WFR Dvorak",
+    ansiSixtyFiveKeymap: "ANSI 65%"
   };
 
 
@@ -133,7 +139,7 @@ export default function Home() {
               </select>
             </div>
           </div>
-          <div className="h-[425px] w-[950px] flex justify-center items-center',">
+          <div className="h-[425px] w-[900px] flex justify-center items-center',">
             {selectedLayout ===
               "MacBookLayout" && (
                 <MacBookLayout
@@ -152,7 +158,19 @@ export default function Home() {
                   keyState={
                     keyState
                   }
-                  keymap={selectedKeymap === "appleStandardKeymap" ? appleStandardKeymap : selectedKeymap === "wfrDvorakKeymap" ? wfrDvorakKeymap : undefined}
+                  keymap={selectedKeymap === "appleStandardKeymap" ? appleStandardKeymap : undefined}
+                  currentMode={
+                    currentMode
+                  }
+                />
+              )}
+            {selectedLayout ===
+              "AnsiSixtyFiveLayout" && (
+                <AnsiSixtyFiveLayout
+                  keyState={
+                    keyState
+                  }
+                  keymap={ansiSixtyFiveKeymap}
                   currentMode={
                     currentMode
                   }

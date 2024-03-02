@@ -28,19 +28,34 @@ body {
 
 .key {
   border-color: #374151;
-  border-radius: 0.75rem;
+  border-radius: 0.25rem;
   padding: 1rem;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 3.5rem;
-  width: 3.55rem;
+  height: 3.25rem;
+  width: 3.25rem;
+}
+
+.key-apple-tl-rnd {
+  width: 5.25rem;
+  border-top-left-radius: 2rem;
+}
+
+.key-apple-bl-rnd {
+  border-bottom-left-radius: 2rem;
+}
+
+.key-apple-br-rnd {
+  border-bottom-right-radius: 2rem;
+}
+
+.key-apple-tr-rnd {
+  border-top-right-radius: 2rem;
 }
 
 .key-apple-del-tab {
-  width: 5.5rem;
+  width: 5.75rem;
 }
 
 .key-apple-command {
@@ -48,23 +63,69 @@ body {
 }
 
 .key-apple-return-caps {
-  width: 6.5rem;
+  width: 6.4rem;
 }
 
 .key-apple-shift {
-  width: 8.5rem;
+  width: 8.25rem;
 }
 
 .key-apple-space {
-  width: 20rem;
+  width: 18.25rem;
 }
 
 .key-apple-arrow {
   height: 1.5rem;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-  border-radius: 0.5rem;
+  border-radius: 0;
 }
+
+.key-apple-arrow-bottom {
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.key-apple-arrow-top {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.key-apple-arrow-side {
+  border-top-right-radius: 0.25rem;
+  border-top-left-radius: 0.25rem;
+}
+
+.key-sf-meta {
+  width: 4.375rem;
+}
+
+
+.key-sf-shift {
+  width: 8.75rem;
+}
+
+.key-sf-caps {
+  width: 6.5rem;
+}
+
+.key-sf-backspace {
+  width: 7.25rem;
+}
+
+.key-sf-return {
+  width: 8rem;
+}
+
+.key-sf-tab {
+  width: 5.5rem;
+}
+
+
+.key-sf-space {
+  width: 23rem;
+}
+
 
 .key-normal {
   border: 2px solid rgb(255, 0, 255);
@@ -84,4 +145,32 @@ body {
 .labels {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
+}
+
+/* For Firefox */
+.scroll-box {
+  overflow-y: scroll;
+  scrollbar-color: rgb(0, 255, 0) rgba(0, 0, 0, 0.5);
+  /* thumb and track color */
+  scrollbar-width: thin;
+}
+
+/* For Webkit (Chrome, Safari, etc.) */
+.scroll-box::-webkit-scrollbar {
+  width: 8px;
+  /* width of the entire scrollbar */
+}
+
+.scroll-box::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.5);
+  /* color of the tracking area */
+}
+
+.scroll-box::-webkit-scrollbar-thumb {
+  background-color: rgb(0, 255, 0);
+  /* color of the scroll thumb */
+  border-radius: 4px;
+  /* roundness of the scroll thumb */
+  border: 2px solid rgba(0, 0, 0, 0);
+  /* creates padding around scroll thumb */
 }
