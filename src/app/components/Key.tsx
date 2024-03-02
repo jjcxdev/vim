@@ -69,8 +69,8 @@ export default function Key({
       }}
     >
       <div className="flex justify-center items-center flex-col">
-        <div>{upper}</div>
-        <div>{lower}</div>
+        <div className="whitespace-nowrap">{upper}</div>
+        <div className="whitespace-nowrap">{lower}</div>
       </div>
     </kbd>
   );

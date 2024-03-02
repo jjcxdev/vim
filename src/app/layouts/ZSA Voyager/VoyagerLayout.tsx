@@ -18,8 +18,8 @@ export default function VoyagerLayout({ keymap = {} }: VoyagerLayoutProps) {
   useKeyHandler(setCurrentMode, currentMode, setKeyState);
 
   return (
-    <main className="flex flex-col min-w-[950px]">
-      <div className="flex justify-between flex-row">
+    <main className="flex pb-8 flex-col min-w-full">
+      <div className="flex pt-4 justify-between flex-row">
         {/* ---------------- LEFT SIDE ---------------- */}
         <div className="left-group">
           <div className="left-group-main flex gap-2">
