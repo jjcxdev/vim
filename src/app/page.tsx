@@ -163,7 +163,7 @@ export default function Home() {
                   keyState={
                     keyState
                   }
-                  keymap={selectedKeymap === "appleStandardKeymap" ? appleStandardKeymap : undefined}
+                  keymap={appleStandardKeymap}
                   currentMode={
                     currentMode
                   }
