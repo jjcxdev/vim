@@ -9,7 +9,7 @@ import AnsiLayout from "./layouts/ANSI/AnsiLayout";
 
 // Keymaps
 import { jjcxVoyagerKeymap } from "./keymaps/Custom/jjcxVoyager";
-import { macBookStandardKeymap } from "./keymaps/Apple/macbookStandardKeymap";
+import { macBookStandardKeymap } from "./keymaps/Apple/macBookStandardKeymap";
 import { appleStandardKeymap } from "./keymaps/Apple/appleStandardKeymap";
 import { ansiSixtyFiveKeymap } from "./keymaps/ANSI/ansiSixtyFiveKeymap";
 import { wfrDvorakKeymap } from "./keymaps/Custom/wfrodriguezdvorak";
