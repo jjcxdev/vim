@@ -16,7 +16,7 @@ export interface KeyConfig {
   isPressed: boolean;
 }
 
-export const macBookStandardKeymap: Record<string, KeyConfig> = {
+export const macBookQwertyKeymap: Record<string, KeyConfig> = {
   /* -------- First Row -------- */
 
   DANCE_00: {
