@@ -1,5 +1,3 @@
-import React from "react";
-
 import { PiControl } from "react-icons/pi";
 import { PiOption } from "react-icons/pi";
 import { PiCommand } from "react-icons/pi";
@@ -18,7 +16,7 @@ export interface KeyConfig {
   isPressed: boolean;
 }
 
-export const macBookStandardKeymap: Record<string, KeyConfig> = {
+export const macBookQwertyKeymap: Record<string, KeyConfig> = {
   /* -------- First Row -------- */
 
   DANCE_00: {
@@ -423,21 +421,21 @@ export const macBookStandardKeymap: Record<string, KeyConfig> = {
   DANCE_41: {
     id: "DANCE_42",
     upper: "",
-    lower: <PiControl />,
+    lower: "ctrl",
     actions: ["Control"],
     isPressed: false,
   },
   DANCE_42: {
     id: "DANCE_43",
     upper: "",
-    lower: <PiOption />,
+    lower: "opt",
     actions: ["Alt"],
     isPressed: false,
   },
   DANCE_43: {
     id: "DANCE_44",
     upper: "",
-    lower: <PiCommand />,
+    lower: "cmd",
     actions: ["Meta"],
     isPressed: false,
   },
@@ -451,42 +449,42 @@ export const macBookStandardKeymap: Record<string, KeyConfig> = {
   DANCE_45: {
     id: "DANCE_46",
     upper: "",
-    lower: <PiCommand />,
+    lower: "cmd",
     actions: ["Meta"],
     isPressed: false,
   },
   DANCE_46: {
     id: "DANCE_47",
     upper: "",
-    lower: <PiOption />,
+    lower: "opt",
     actions: ["Alt"],
     isPressed: false,
   },
   DANCE_47: {
     id: "DANCE_48",
     upper: "",
-    lower: <IoMdArrowDropleft />,
+    lower: "down",
     actions: ["ArrowLeft"],
     isPressed: false,
   },
   DANCE_48: {
     id: "DANCE_49",
     upper: "",
-    lower: <IoMdArrowDropup />,
+    lower: "up",
     actions: ["ArrowUp"],
     isPressed: false,
   },
   DANCE_49: {
     id: "DANCE_4A",
     upper: "",
-    lower: <IoMdArrowDropdown />,
+    lower: "down",
     actions: ["ArrowDown"],
     isPressed: false,
   },
   DANCE_4A: {
     id: "DANCE_4B",
     upper: "",
-    lower: <IoMdArrowDropright />,
+    lower: "right",
     actions: ["ArrowRight"],
     isPressed: false,
   },
