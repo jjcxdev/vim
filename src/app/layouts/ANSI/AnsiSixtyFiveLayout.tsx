@@ -2,13 +2,15 @@ import Image from "next/image";
 import { useState } from "react";
 import { useMode } from "@/app/utils/ModeContext";
 import { KeyConfig } from "@/app/utils/types";
-import { useKeyHandler } from "@/app/utils/useKeyHandlers";
+import { KeyState, Mode, useKeyHandler } from "@/app/utils/useKeyHandlers";
 
 import Key from "@/app/components/Key";
 import Indicator from "@/app/components/Indicators";
 
 interface AnsiSixtyFiveLayoutProps {
   keymap: Record<string, KeyConfig>;
+  keyState: KeyState
+  currentMode: Mode
 }
 
 export default function AnsiSixtyFiveLayout({ keymap = {} }: AnsiSixtyFiveLayoutProps) {
