@@ -5,6 +5,7 @@ import MacBookLayout from "./layouts/Apple/MacBookLayout";
 import VoyagerLayout from "./layouts/ZSA Voyager/VoyagerLayout";
 import AppleLayout from "./layouts/Apple/AppleLayout";
 import AnsiSixtyFiveLayout from "./layouts/ANSI/AnsiSixtyFiveLayout";
+import AnsiLayout from "./layouts/ANSI/AnsiLayout";
 
 // Keymaps
 import { jjcxVoyagerKeymap } from "./keymaps/Custom/jjcxVoyager";
@@ -12,6 +13,7 @@ import { macBookStandardKeymap } from "./keymaps/Apple/macbookStandardKeymap";
 import { appleStandardKeymap } from "./keymaps/Apple/appleStandardKeymap";
 import { ansiSixtyFiveKeymap } from "./keymaps/ANSI/ansiSixtyFiveKeymap";
 import { wfrDvorakKeymap } from "./keymaps/Custom/wfrodriguezdvorak";
+import { ansiQwertyKeymap } from "./keymaps/ANSI/ansiQwertyKeymap";
 
 // Command Display
 import CommandDisplay from "./components/CommandDisplay";
@@ -43,6 +45,7 @@ export default function Home() {
     AppleLayout: ["appleStandardKeymap"],
     VoyagerLayout: ["jjcxVoyagerKeymap"],
     AnsiSixtyFiveLayout: ["ansiSixtyFiveKeymap"],
+    AnsiLayout: ["ansiQwertyKeymap"],
     // IsoLayout: ["wfrDvorakKeymap"],
   };
 
@@ -50,6 +53,7 @@ export default function Home() {
     MacBookLayout: "MacBook",
     AppleLayout: "Apple",
     VoyagerLayout: "ZSA Voyager",
+    AnsiLayout: "ANSI",
     AnsiSixtyFiveLayout: "ANSI 65%",
   };
 
@@ -58,6 +62,7 @@ export default function Home() {
     appleStandardKeymap: "Apple",
     jjcxVoyagerKeymap: "jjcx custom",
     wfrDvorakKeymap: "WFR Dvorak",
+    ansiQwertyKeymap: "QWERTY",
     ansiSixtyFiveKeymap: "ANSI 65%"
   };
 
@@ -159,6 +164,18 @@ export default function Home() {
                     keyState
                   }
                   keymap={selectedKeymap === "appleStandardKeymap" ? appleStandardKeymap : undefined}
+                  currentMode={
+                    currentMode
+                  }
+                />
+              )}
+            {selectedLayout ===
+              "AnsiLayout" && (
+                <AnsiLayout
+                  keyState={
+                    keyState
+                  }
+                  keymap={ansiQwertyKeymap}
                   currentMode={
                     currentMode
                   }

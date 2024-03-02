@@ -126,6 +126,29 @@ body {
   width: 23rem;
 }
 
+.key-ansi-space {
+  width: 18rem;
+}
+
+.key-ansi-shift {
+  width: 7.25rem;
+}
+
+.key-ansi-rshift {
+  width: 9.25rem;
+}
+
+.key-ansi-del {
+  width: 5.75rem;
+}
+
+.key-ansi-alt {
+  width: 5.25rem;
+}
+
+.key-ansi-ctrl {
+  width: 5.5rem;
+}
 
 .key-normal {
   border: 2px solid rgb(255, 0, 255);
