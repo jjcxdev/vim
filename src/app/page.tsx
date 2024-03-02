@@ -23,6 +23,8 @@ import { ModeProvider, useMode } from "./utils/ModeContext";
 import { KeymapProvider, useKeymap } from "./utils/KeymapContext";
 import { useKeyHandler } from "./utils/useKeyHandlers";
 
+import Header from "./components/Header";
+
 type KeyState = Record<string, boolean>;
 
 export default function Home() {
@@ -97,7 +99,9 @@ export default function Home() {
   return (
     <ModeProvider>
       <KeymapProvider>
+        <div className="w-full h-full pb-8"><Header /></div>
         <main className="flex h-screen w-full flex-col items-center justify-start p-4">
+
           <div className="w-full max-w-[950px] flex justify-start gap-4 py-8">
             {/* Select keyboard layouts*/}
             <div className="flex text-xs gap-1 text-gray-400 items-center flex-col">
