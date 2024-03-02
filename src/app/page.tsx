@@ -9,7 +9,7 @@ import AnsiLayout from "./layouts/ANSI/AnsiLayout";
 
 // Keymaps
 import { jjcxVoyagerKeymap } from "./keymaps/Custom/jjcxVoyager";
-import { macBookStandardKeymap } from "./keymaps/Apple/macBookStandardKeymap";
+import { macBookQwertyKeymap } from "./keymaps/Apple/macBookQwertyKeymap";
 import { appleStandardKeymap } from "./keymaps/Apple/appleStandardKeymap";
 import { ansiSixtyFiveKeymap } from "./keymaps/ANSI/ansiSixtyFiveKeymap";
 import { wfrDvorakKeymap } from "./keymaps/Custom/wfrodriguezdvorak";
@@ -41,7 +41,7 @@ export default function Home() {
   };
 
   const layoutKeymapMapping: LayoutKeymapMapping = {
-    MacBookLayout: ["macBookStandardKeymap"],
+    MacBookLayout: ["macBookQwertyKeymap"],
     AppleLayout: ["appleStandardKeymap"],
     VoyagerLayout: ["jjcxVoyagerKeymap"],
     AnsiSixtyFiveLayout: ["ansiSixtyFiveKeymap"],
@@ -58,7 +58,7 @@ export default function Home() {
   };
 
   const keymapDisplayNames: DisplayNames = {
-    macBookStandardKeymap: "MacBook",
+    macBookQwertyKeymap: "MacBook",
     appleStandardKeymap: "Apple",
     jjcxVoyagerKeymap: "jjcx custom",
     wfrDvorakKeymap: "WFR Dvorak",
@@ -151,7 +151,7 @@ export default function Home() {
                   keyState={
                     keyState
                   }
-                  keymap={macBookStandardKeymap}
+                  keymap={macBookQwertyKeymap}
                   currentMode={
                     currentMode
                   }
