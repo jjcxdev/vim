@@ -9,8 +9,8 @@ import AnsiLayout from "./layouts/ANSI/AnsiLayout";
 
 // Keymaps
 import { jjcxVoyagerKeymap } from "./keymaps/Custom/jjcxVoyager";
-import { macBookStandardKeymap } from "./keymaps/Apple/macbookStandardKeymap";
 import { appleStandardKeymap } from "./keymaps/Apple/appleStandardKeymap";
+import { macBookStandardKeymap } from "./keymaps/Apple/MacbookStandardKeymap";
 import { ansiSixtyFiveKeymap } from "./keymaps/ANSI/ansiSixtyFiveKeymap";
 import { wfrDvorakKeymap } from "./keymaps/Custom/wfrodriguezdvorak";
 import { ansiQwertyKeymap } from "./keymaps/ANSI/ansiQwertyKeymap";
@@ -70,14 +70,14 @@ export default function Home() {
   useEffect(() => {
     setSelectedLayout(Object.keys(layoutKeymapMapping)[0]);
     setSelectedKeymap(layoutKeymapMapping[Object.keys(layoutKeymapMapping)[0]][0]);
-  }, []);
+  }, [layoutKeymapMapping]);
 
 
   useEffect(() => {
     if (selectedLayout) {
       setSelectedKeymap(layoutKeymapMapping[selectedLayout][0]);
     }
-  }, [selectedLayout]);
+  }, [selectedLayout, layoutKeymapMapping]);
 
   useEffect(() => {
     const findLayoutForKeymap = (keymap: string) => {
@@ -90,7 +90,7 @@ export default function Home() {
     if (layoutForKeymap && selectedLayout !== layoutForKeymap) {
       setSelectedLayout(layoutForKeymap);
     }
-  }, [selectedKeymap]);
+  }, [selectedKeymap, layoutKeymapMapping, selectedLayout]);
 
   useKeyHandler(setCurrentMode, currentMode, setKeyState);
 
