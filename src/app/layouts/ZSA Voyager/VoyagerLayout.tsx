@@ -220,7 +220,7 @@ export default function VoyagerLayout({ keymap = {} }: VoyagerLayoutProps) {
 
         {/* ---------------- CENTER CLUSTER ---------------- */}
 
-        <div className="h-full justify-center flex gap-4 flex-col items-center">
+        <div className="h-full px-8 justify-center flex gap-4 flex-col items-center">
           {/* ---------------- VIM LOGO ---------------- */}
           <div className="flex items-center h-full">
             <Image
