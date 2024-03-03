@@ -1,6 +1,8 @@
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import "./globals.css";
+import MobileSplash from "./components/MobileSplash";
+
 
 export const metadata: Metadata = {
   title: "VimKeyboard",
@@ -14,7 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}<Analytics /></body>
+      <body>
+        <MobileSplash />
+        <div className="main-content">  {children}</div>
+        <Analytics />
+      </body>
     </html>
   );
 }
