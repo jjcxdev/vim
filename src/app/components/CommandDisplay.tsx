@@ -65,7 +65,7 @@ const CommandDisplay = () => {
   };
 
   return (
-    <div className="py-8 w-[950px] h-full flex flex-col">
+    <div className="max-w-[950px] h-full flex flex-col">
       <h1 className="py-4">{getHeading(currentMode)}</h1>
       <div className="border h-60 border-gray-700 px-4 py-2 overflow-scroll scroll-box grid grid-cols-4 rounded-lg">
         {Object.entries(currentSubheadings).map(([subheading, keys]) => (
