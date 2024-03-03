@@ -70,29 +70,18 @@ export default function Home() {
 
 
   useEffect(() => {
-    setSelectedLayout(Object.keys(layoutKeymapMapping)[0]);
-    setSelectedKeymap(layoutKeymapMapping[Object.keys(layoutKeymapMapping)[0]][0]);
-  }, [layoutKeymapMapping]);
 
+    const firstLayout = Object.keys(layoutKeymapMapping)[0];
+    setSelectedLayout(firstLayout);
+    setSelectedKeymap(layoutKeymapMapping[firstLayout][0]);
+  }, []);
 
   useEffect(() => {
     if (selectedLayout) {
       setSelectedKeymap(layoutKeymapMapping[selectedLayout][0]);
-    }
-  }, [selectedLayout, layoutKeymapMapping]);
 
-  useEffect(() => {
-    const findLayoutForKeymap = (keymap: string) => {
-      return Object.keys(layoutKeymapMapping).find(layout =>
-        layoutKeymapMapping[layout].includes(keymap)
-      );
-    };
-
-    const layoutForKeymap = findLayoutForKeymap(selectedKeymap);
-    if (layoutForKeymap && selectedLayout !== layoutForKeymap) {
-      setSelectedLayout(layoutForKeymap);
     }
-  }, [selectedKeymap, layoutKeymapMapping, selectedLayout]);
+  }, [selectedLayout]);
 
   useKeyHandler(setCurrentMode, currentMode, setKeyState);
 
