@@ -14,7 +14,7 @@ export default function Footer() {
           </Link>
         </div>
         <div className="flex items-center gap-4">created by
-          <Link href="https:jjcx.dev" className="text-3xl p-1 hover:border-green-500 rounded-md border border-white-600">
+          <Link href="https://jjcx.dev" className="text-3xl p-1 hover:border-green-500 rounded-md border border-white-600">
             <Image
               src="/jjcx_logo.svg"
               alt="jjcx logo"
