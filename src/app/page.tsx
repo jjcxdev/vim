@@ -23,7 +23,7 @@ import { ModeProvider, useMode } from "./utils/ModeContext";
 import { KeymapProvider, useKeymap } from "./utils/KeymapContext";
 import { useKeyHandler } from "./utils/useKeyHandlers";
 
-import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 type KeyState = Record<string, boolean>;
 
@@ -88,117 +88,140 @@ export default function Home() {
   return (
     <ModeProvider>
       <KeymapProvider>
-        <div className="w-full h-full pb-8"><Header /></div>
-        <main className="flex h-screen w-full flex-col items-center justify-start p-4">
+        <div className="flex flex-col min-h-screen">
 
-          <div className="w-full max-w-[950px] flex justify-start gap-4 py-8">
-            {/* Select keyboard layouts*/}
-            <div className="flex text-xs gap-1 text-gray-400 items-center flex-col">
-              select keyboard
-              <select
-                className="p-2 text-xs bg-gray-50/10 text-gray-400 rounded-md border border-gray-700"
-                value={
-                  selectedLayout
-                }
-                onChange={(e) =>
-                  setSelectedLayout(
-                    e
-                      .target
-                      .value
-                  )
-                }
-              >
-                {Object.keys(layoutKeymapMapping).map((layout) => (
-                  <option key={layout} value={layout}>
-                    {layoutDisplayNames[layout]}                 </option>
-                ))}
-              </select>
+          {/* ----- CONTENT ----- */}
+          <main className="flex-1 w-full flex flex-col items-center overflow-hidden justify-between px-4">
+            {/* ----- HEADER ----- */}
+
+            <div className="w-full items-center max-w-[900px] flex justify-between gap-4 py-4">
+              <div className="text-2xl">
+                VimKeyboard
+              </div>
+
+              {/* Select keyboard layouts*/}
+
+              <div className="flex gap-4">
+                <div className="flex text-xs gap-1 text-gray-400 items-center flex-col">
+                  select keyboard
+                  <select
+                    className="p-2 text-xs bg-gray-50/10 text-gray-400 rounded-md border border-gray-700"
+                    value={
+                      selectedLayout
+                    }
+                    onChange={(e) =>
+                      setSelectedLayout(
+                        e
+                          .target
+                          .value
+                      )
+                    }
+                  >
+                    {Object.keys(layoutKeymapMapping).map((layout) => (
+                      <option key={layout} value={layout}>
+                        {layoutDisplayNames[layout]}                 </option>
+                    ))}
+                  </select>
+                </div>
+                {/* Select keymaps in ./keymaps/ which will populate the layouts*/}
+                <div className="flex gap-1 text-gray-400 text-xs items-center flex-col">
+                  select keymap
+                  <select
+                    className="p-2 text-xs bg-gray-50/10 text-gray-400 rounded-md border border-gray-700"
+                    value={
+                      selectedKeymap
+                    }
+                    onChange={(e) =>
+                      setSelectedKeymap(
+                        e
+                          .target
+                          .value
+                      )
+                    }
+                  >
+                    {layoutKeymapMapping[selectedLayout]?.map((keymap) => (
+                      <option key={keymap} value={keymap}>
+                        {keymapDisplayNames[keymap]}                  </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
             </div>
-            {/* Select keymaps in ./keymaps/ which will populate the layouts*/}
-            <div className="flex gap-1 text-gray-400 text-xs items-center flex-col">
-              select keymap
-              <select
-                className="p-2 text-xs bg-gray-50/10 text-gray-400 rounded-md border border-gray-700"
-                value={
-                  selectedKeymap
-                }
-                onChange={(e) =>
-                  setSelectedKeymap(
-                    e
-                      .target
-                      .value
-                  )
-                }
-              >
-                {layoutKeymapMapping[selectedLayout]?.map((keymap) => (
-                  <option key={keymap} value={keymap}>
-                    {keymapDisplayNames[keymap]}                  </option>
-                ))}
-              </select>
+
+            {/* ----- KEYBOARDS ----- */}
+
+            <div className="h-[450px] max-w-[950px] overflow-x-scroll flex justify-center items-center">
+              {selectedLayout ===
+                "MacBookLayout" && (
+                  <MacBookLayout
+                    keyState={
+                      keyState
+                    }
+                    keymap={macBookQwertyKeymap}
+                    currentMode={
+                      currentMode
+                    }
+                  />
+                )}
+              {selectedLayout ===
+                "AppleLayout" && (
+                  <AppleLayout
+                    keyState={
+                      keyState
+                    }
+                    keymap={appleStandardKeymap}
+                    currentMode={
+                      currentMode
+                    }
+                  />
+                )}
+              {selectedLayout ===
+                "AnsiLayout" && (
+                  <AnsiLayout
+                    keyState={
+                      keyState
+                    }
+                    keymap={ansiQwertyKeymap}
+                    currentMode={
+                      currentMode
+                    }
+                  />
+                )}
+              {selectedLayout ===
+                "AnsiSixtyFiveLayout" && (
+                  <AnsiSixtyFiveLayout
+                    keyState={
+                      keyState
+                    }
+                    keymap={ansiSixtyFiveKeymap}
+                    currentMode={
+                      currentMode
+                    }
+                  />
+                )}
+              {selectedLayout ===
+                "VoyagerLayout" && (
+                  <VoyagerLayout
+                    keyState={keyState}
+                    keymap={jjcxVoyagerKeymap}
+                    currentMode={
+                      currentMode
+                    }
+                  />
+                )}
             </div>
-          </div>
-          <div className="h-[425px] w-[900px] flex justify-center items-center',">
-            {selectedLayout ===
-              "MacBookLayout" && (
-                <MacBookLayout
-                  keyState={
-                    keyState
-                  }
-                  keymap={macBookQwertyKeymap}
-                  currentMode={
-                    currentMode
-                  }
-                />
-              )}
-            {selectedLayout ===
-              "AppleLayout" && (
-                <AppleLayout
-                  keyState={
-                    keyState
-                  }
-                  keymap={appleStandardKeymap}
-                  currentMode={
-                    currentMode
-                  }
-                />
-              )}
-            {selectedLayout ===
-              "AnsiLayout" && (
-                <AnsiLayout
-                  keyState={
-                    keyState
-                  }
-                  keymap={ansiQwertyKeymap}
-                  currentMode={
-                    currentMode
-                  }
-                />
-              )}
-            {selectedLayout ===
-              "AnsiSixtyFiveLayout" && (
-                <AnsiSixtyFiveLayout
-                  keyState={
-                    keyState
-                  }
-                  keymap={ansiSixtyFiveKeymap}
-                  currentMode={
-                    currentMode
-                  }
-                />
-              )}
-            {selectedLayout ===
-              "VoyagerLayout" && (
-                <VoyagerLayout
-                  keyState={keyState}
-                  keymap={jjcxVoyagerKeymap}
-                  currentMode={
-                    currentMode
-                  }
-                />
-              )}
-          </div>
-          <CommandDisplay />
-        </main>
+
+            {/* ----- COMMANDS ----- */}
+            {/* THIS IS WHERE THE OVERFLOW-Y-SCROLL OCCURS */}
+            <CommandDisplay />
+            {/* ----- FOOTER ----- */}
+
+            <div className="w-full h-full">
+              <Footer />
+            </div>
+          </main>
+        </div>
+
       </KeymapProvider>
     </ModeProvider>
   );
