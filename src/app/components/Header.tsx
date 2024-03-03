@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="w-full flex justify-center items-center fixed bg-[#000000] px-8 py-4">
+    <header className="w-full flex justify-center items-center bg-[#000000] px-8 py-4">
       <div className="w-full"></div>
       <div className="w-full flex justify-center">VimKeyboard</div>
       <div className="w-full flex justify-end gap-4">
