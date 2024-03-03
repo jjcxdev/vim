@@ -23,7 +23,6 @@ import { ModeProvider, useMode } from "./utils/ModeContext";
 import { KeymapProvider, useKeymap } from "./utils/KeymapContext";
 import { useKeyHandler } from "./utils/useKeyHandlers";
 
-import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 type KeyState = Record<string, boolean>;
