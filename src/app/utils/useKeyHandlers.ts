@@ -5,6 +5,8 @@ export type KeyState = Record<string, boolean>;
 type ModeSetter = (mode: Mode) => void;
 type CurrentMode = 'normal' | 'visual' | 'insert' | undefined;
 
+const InsertKeys = ["i", "I", "a", "A", "o", "O"]
+
 export const useKeyHandler = (
   setCurrentMode: ModeSetter,
   currentMode: CurrentMode,
@@ -21,7 +23,7 @@ export const useKeyHandler = (
       if (currentMode === "normal") {
         if (event.key === "v") {
           setCurrentMode("visual");
-        } else if (event.key === "i") {
+        } else if (InsertKeys.includes(event.key)) {
           setCurrentMode("insert");
         }
       } else if (event.key === "Escape") {
