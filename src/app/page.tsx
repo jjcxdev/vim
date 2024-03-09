@@ -150,7 +150,7 @@ export default function Home() {
 
             {/* ----- KEYBOARDS ----- */}
 
-            <div className="h-[450px] max-w-[950px] overflow-x-scroll flex justify-center items-center">
+            <div className="h-[450px] max-w-[950px] flex justify-center items-center">
               {selectedLayout ===
                 "MacBookLayout" && (
                   <MacBookLayout
