@@ -26,13 +26,13 @@ const subheadings = {
   },
 
   visual: {
-    "Mode Transition": ["Escape"],
+    "Mode Transition": ["Escape", "Control + c"],
     "Editing Commands": [">", "<", "y", "d"],
     "Case Manipulation Commands": ["~", "u", "U"],
   },
 
   insert: {
-    "Mode Transition": ["Escape"],
+    "Mode Transition": ["Escape", "Control + c"],
     "Text Deletion": ["Backspace", "Control + h", "Control + w", "Control + u", "Control + k"],
     "Autocomplete": ["Control + n", "Control + p"],
   },

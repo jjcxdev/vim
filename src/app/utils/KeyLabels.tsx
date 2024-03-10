@@ -116,6 +116,7 @@ export const NormalModeKeyLabels: KeyAction = {
 export const VisualModeKeyLabels: KeyAction = {
   // Mode Transition
   Escape: { visual: "Exit Visual mode" },
+  "Control + c": { visual: "Exit Visual mode" },
 
   // Editing Commands
   ">": { visual: "Shift right" },
@@ -131,7 +132,8 @@ export const VisualModeKeyLabels: KeyAction = {
 
 export const InsertModeKeyLabels: KeyAction = {
   // Mode Transition
-  Escape: { insert: "Exit Visual mode" },
+  Escape: { insert: "Exit Insert mode" },
+  "Control + c": { insert: "Exit Insert mode" },
 
   // Text Deletion
   Backspace: { insert: "Del prev" },
