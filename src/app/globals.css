@@ -150,6 +150,69 @@ body {
   width: 5.5rem;
 }
 
+.key-iso-space {
+  width: 20.25rem;
+}
+
+.key-iso-shift {
+  width: 5rem;
+}
+
+.key-iso-rshift {
+  width: 10rem;
+}
+
+.key-iso-del {
+  width: 8rem;
+}
+
+.key-iso-alt {
+  width: 5.25rem;
+}
+
+.key-iso-ctrl {
+  width: 5.5rem;
+}
+
+.key-iso-topreturn {
+  width: 5.65rem;
+  position: relative;
+}
+
+.key-iso-topreturn::after {
+  content: '';
+  position: absolute;
+  border-radius: 0.25rem;
+  top: 45px;
+  right: -1px;
+  width: 80px;
+  height: 65px;
+  background-color: #000;
+  border-left: 1px solid #374151;
+  border: 1px solid #374151;
+  border-top: none;
+}
+
+.key-iso-topreturn::before {
+  content: '';
+  width: 80px;
+  right: 0;
+  height: 5px;
+  background-color: #000;
+  position: absolute;
+  border: none;
+  bottom: 0px;
+  z-index: 20;
+}
+
+.key-iso-bottomreturn {
+  width: 5rem;
+}
+
+.key-iso-tab {
+  width: 5.75rem;
+}
+
 .key-normal {
   border: 2px solid rgb(255, 0, 255);
   background: rgba(255, 0, 255, 0.3);
