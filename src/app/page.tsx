@@ -6,6 +6,7 @@ import VoyagerLayout from "./layouts/ZSA Voyager/VoyagerLayout";
 import AppleLayout from "./layouts/Apple/AppleLayout";
 import AnsiSixtyFiveLayout from "./layouts/ANSI/AnsiSixtyFiveLayout";
 import AnsiLayout from "./layouts/ANSI/AnsiLayout";
+import IsoLayout from "./layouts/ISO/IsoLayout";
 
 // Keymaps
 import { jjcxVoyagerKeymap } from "./keymaps/Custom/jjcxVoyager";
@@ -48,6 +49,7 @@ export default function Home() {
     VoyagerLayout: ["jjcxVoyagerKeymap"],
     AnsiSixtyFiveLayout: ["ansiSixtyFiveKeymap"],
     AnsiLayout: ["ansiQwertyKeymap"],
+    IsoLayout: [""],
     // IsoLayout: ["wfrDvorakKeymap"],
   };
 
@@ -57,6 +59,7 @@ export default function Home() {
     VoyagerLayout: "ZSA Voyager",
     AnsiLayout: "ANSI",
     AnsiSixtyFiveLayout: "ANSI 65%",
+    IsoLayout: "ISO",
   };
 
   const keymapDisplayNames: DisplayNames = {
@@ -178,6 +181,18 @@ export default function Home() {
               {selectedLayout ===
                 "AnsiLayout" && (
                   <AnsiLayout
+                    keyState={
+                      keyState
+                    }
+                    keymap={ansiQwertyKeymap}
+                    currentMode={
+                      currentMode
+                    }
+                  />
+                )}
+              {selectedLayout ===
+                "IsoLayout" && (
+                  <IsoLayout
                     keyState={
                       keyState
                     }
