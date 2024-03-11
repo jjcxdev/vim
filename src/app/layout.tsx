@@ -5,6 +5,8 @@ import MobileSplash from "./components/MobileSplash";
 
 
 export const metadata: Metadata = {
+  title: "VimKeyboard",
+  description: "Accelerate learning Vim Motions",
   openGraph: {
     title: "VimKeyboard",
     description: "Accelerate learning Vim Motions",
