@@ -5,8 +5,22 @@ import MobileSplash from "./components/MobileSplash";
 
 
 export const metadata: Metadata = {
-  title: "VimKeyboard",
-  description: "created by jjcx",
+  openGraph: {
+    title: "VimKeyboard",
+    description: "Accelerate learning Vim Motions",
+    url: "http://vim-keyboard.vercel.app",
+    siteName: "VimKeyboard",
+    images: [
+      {
+        url: "https://raw.githubusercontent.com/jjcxdev/vim/main/public/images/vimkeyboard.jpg",
+        width: 1200,
+        height: 630,
+        alt: "VimKeyboard",
+      },
+    ],
+    locale: "en_CANADA",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
