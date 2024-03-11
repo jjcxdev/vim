@@ -15,6 +15,7 @@ import { appleStandardKeymap } from "./keymaps/Apple/appleStandardKeymap";
 import { ansiSixtyFiveKeymap } from "./keymaps/ANSI/ansiSixtyFiveKeymap";
 import { wfrDvorakKeymap } from "./keymaps/Custom/wfrodriguezdvorak";
 import { ansiQwertyKeymap } from "./keymaps/ANSI/ansiQwertyKeymap";
+import { isoQwertyKeymap } from "./keymaps/ISO/isoQwertyKeymap";
 
 // Command Display
 import CommandDisplay from "./components/CommandDisplay";
@@ -49,7 +50,7 @@ export default function Home() {
     VoyagerLayout: ["jjcxVoyagerKeymap"],
     AnsiSixtyFiveLayout: ["ansiSixtyFiveKeymap"],
     AnsiLayout: ["ansiQwertyKeymap"],
-    IsoLayout: [""],
+    IsoLayout: ["isoQwertyKeymap"],
     // IsoLayout: ["wfrDvorakKeymap"],
   };
 
@@ -68,7 +69,8 @@ export default function Home() {
     jjcxVoyagerKeymap: "jjcx custom",
     wfrDvorakKeymap: "WFR Dvorak",
     ansiQwertyKeymap: "QWERTY",
-    ansiSixtyFiveKeymap: "ANSI 65%"
+    ansiSixtyFiveKeymap: "ANSI 65%",
+    isoQwertyKeymap: "ISO QWERTY",
   };
 
 
@@ -196,7 +198,7 @@ export default function Home() {
                     keyState={
                       keyState
                     }
-                    keymap={ansiQwertyKeymap}
+                    keymap={isoQwertyKeymap}
                     currentMode={
                       currentMode
                     }
