@@ -50,8 +50,7 @@ export default function Home() {
     VoyagerLayout: ["jjcxVoyagerKeymap"],
     AnsiSixtyFiveLayout: ["ansiSixtyFiveKeymap"],
     AnsiLayout: ["ansiQwertyKeymap"],
-    IsoLayout: ["isoQwertyKeymap"],
-    // IsoLayout: ["wfrDvorakKeymap"],
+    IsoLayout: ["isoQwertyKeymap", "wfrDvorakKeymap"],
   };
 
   const layoutDisplayNames: DisplayNames = {
@@ -73,6 +72,11 @@ export default function Home() {
     isoQwertyKeymap: "ISO QWERTY",
   };
 
+
+  const isokeymaps = {
+    isoQwertyKeymap: isoQwertyKeymap,
+    wfrDvorakKeymap: wfrDvorakKeymap,
+  }
 
   useEffect(() => {
 
@@ -198,7 +202,7 @@ export default function Home() {
                     keyState={
                       keyState
                     }
-                    keymap={isoQwertyKeymap}
+                    keymap={isokeymaps[selectedKeymap as keyof typeof isokeymaps]}
                     currentMode={
                       currentMode
                     }
