@@ -19,7 +19,6 @@ interface KeyProps {
 export default function Key({
   upper,
   lower,
-  children,
   actions = [],
   mode = "normal",
   isPressed,
@@ -53,17 +52,16 @@ export default function Key({
   }
 
   // DO NOT REMOVE THIS - GLOBAL KEYPRESS REGARDLESS OF MODE
-  let borderColor = isPressed ? "yellow" : ""; // yellow when pressed or inital styling
+  let pressedClass = isPressed ? "key-pressed" : ""; // yellow when pressed or inital styling
 
   // Construct className with base key class and additional mode class
-  const combinedClassName = `key${additionalModeClass} ${className}`.trim();
+  const combinedClassName = `key${additionalModeClass} ${className} ${pressedClass}`.trim();
 
   // Pass GLOBAL KEY PRESS to keys
   return (
     <kbd
       className={combinedClassName}
       style={{
-        borderColor: borderColor,
         borderStyle: "solid",
         borderWidth: "1px",
       }}

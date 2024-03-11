@@ -27,7 +27,7 @@ body {
 }
 
 .key {
-  border-color: #374151;
+  border-color: #374151 !important;
   border-radius: 0.25rem;
   padding: 1rem;
   display: flex;
@@ -35,6 +35,10 @@ body {
   justify-content: center;
   height: 3.25rem;
   width: 3.25rem;
+}
+
+.key.key-pressed {
+  border: 2px solid yellow !important;
 }
 
 .key-apple-tl-rnd {
@@ -193,6 +197,10 @@ body {
   border-top: none;
 }
 
+.key.key.key-pressed::after {
+  border: 2px solid yellow;
+}
+
 .key-iso-topreturn::before {
   content: '';
   width: 69px;
@@ -211,17 +219,17 @@ body {
 }
 
 .key-normal {
-  border: 2px solid rgb(255, 0, 255);
+  border: 2px solid rgb(255, 0, 255) !important;
   background: rgba(255, 0, 255, 0.3);
 }
 
 .key-visual {
-  border: 2px solid rgb(0, 200, 255);
+  border: 2px solid rgb(0, 200, 255) !important;
   background: rgba(0, 200, 255, 0.3);
 }
 
 .key-insert {
-  border: 2px solid rgb(255, 0, 0);
+  border: 2px solid rgb(255, 0, 0) !important;
   background: rgba(255, 0, 0, 0.3);
 }
 
