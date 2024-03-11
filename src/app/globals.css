@@ -151,7 +151,7 @@ body {
 }
 
 .key-iso-space {
-  width: 20.25rem;
+  width: 17.25rem;
 }
 
 .key-iso-shift {
@@ -159,11 +159,11 @@ body {
 }
 
 .key-iso-rshift {
-  width: 10rem;
+  width: 9.5rem;
 }
 
 .key-iso-del {
-  width: 8rem;
+  width: 7.5rem;
 }
 
 .key-iso-alt {
@@ -175,7 +175,7 @@ body {
 }
 
 .key-iso-topreturn {
-  width: 5.65rem;
+  width: 5rem;
   position: relative;
 }
 
@@ -185,7 +185,7 @@ body {
   border-radius: 0.25rem;
   top: 45px;
   right: -1px;
-  width: 80px;
+  width: 69px;
   height: 65px;
   background-color: #000;
   border-left: 1px solid #374151;
@@ -195,7 +195,7 @@ body {
 
 .key-iso-topreturn::before {
   content: '';
-  width: 80px;
+  width: 69px;
   right: 0;
   height: 5px;
   background-color: #000;
@@ -205,9 +205,6 @@ body {
   z-index: 20;
 }
 
-.key-iso-bottomreturn {
-  width: 5rem;
-}
 
 .key-iso-tab {
   width: 5.75rem;

@@ -28,18 +28,28 @@ export default function IsoLayout({ keymap = {} }: IsoLayoutProps) {
     <main className="flex justify-center flex-col gap-2 min-w-fit">
       {/*----- Indicators and Vim logo ----- */}
 
-      <div className="flex w-full justify-end gap-4 pb-2 items-center">
-        <div className="flex h-8 gap-4">
-          <Indicator mode="Normal" currentMode={currentMode} />
-          <Indicator mode="Visual" currentMode={currentMode} />
-          <Indicator mode="Insert" currentMode={currentMode} />
-        </div>
-        <Image
-          src="/images/Vimlogo.svg"
-          alt="vim logo"
-          height={50}
-          width={50}
+      {/* ----- UPPER Row ----- */}
+      <div className="keyboard-row gap-2 justify-between w-full flex">
+        <Key
+          {...(keymap["DANCE_50"] || {})}
+          isPressed={
+            keymap["DANCE_50"]?.actions.some((action) => keyState[action]) ||
+            false
+          } mode={currentMode}
         />
+        <div className="flex gap-4 items-center">
+          <div className="flex h-8 gap-4">
+            <Indicator mode="Normal" currentMode={currentMode} />
+            <Indicator mode="Visual" currentMode={currentMode} />
+            <Indicator mode="Insert" currentMode={currentMode} />
+          </div>
+          <Image
+            src="/images/Vimlogo.svg"
+            alt="vim logo"
+            height={50}
+            width={50}
+          />
+        </div>
       </div>
 
       {/* ----- First Row ----- */}
@@ -243,7 +253,7 @@ export default function IsoLayout({ keymap = {} }: IsoLayoutProps) {
           isPressed={
             keymap["DANCE_1D"]?.actions.some((action) => keyState[action]) ||
             false
-          } mode={currentMode} className="key-iso-topreturn rounded-none"
+          } mode={currentMode} className="key-iso-topreturn"
         />
       </div>
 
@@ -444,61 +454,54 @@ export default function IsoLayout({ keymap = {} }: IsoLayoutProps) {
           isPressed={
             keymap["DANCE_40"]?.actions.some((action) => keyState[action]) ||
             false
-          } mode={currentMode} className="key-iso-ctrl"
+          } mode={currentMode} className="key-iso-shift"
         />
         <Key
           {...(keymap["DANCE_41"] || {})}
           isPressed={
             keymap["DANCE_41"]?.actions.some((action) => keyState[action]) ||
             false
-          } mode={currentMode}
+          } mode={currentMode} className="key-iso-shift"
         />
         <Key
           {...(keymap["DANCE_42"] || {})}
           isPressed={
             keymap["DANCE_42"]?.actions.some((action) => keyState[action]) ||
             false
-          } mode={currentMode}
+          } mode={currentMode} className="key-iso-shift"
         />
         <Key
           {...(keymap["DANCE_43"] || {})}
           isPressed={
             keymap["DANCE_43"]?.actions.some((action) => keyState[action]) ||
             false
-          } mode={currentMode}
+          } mode={currentMode} className="key-iso-space"
         />
         <Key
           {...(keymap["DANCE_44"] || {})}
           isPressed={
             keymap["DANCE_44"]?.actions.some((action) => keyState[action]) ||
             false
-          } mode={currentMode} className="key-iso-space"
+          } mode={currentMode} className="key-iso-shift"
         />
         <Key
           {...(keymap["DANCE_45"] || {})}
           isPressed={
             keymap["DANCE_45"]?.actions.some((action) => keyState[action]) ||
             false
-          } mode={currentMode} className="key-iso-alt"
+          } mode={currentMode} className="key-iso-shift"
         />
         <Key
           {...(keymap["DANCE_46"] || {})}
           isPressed={
             keymap["DANCE_46"]?.actions.some((action) => keyState[action]) ||
             false
-          } mode={currentMode}
+          } mode={currentMode} className="key-iso-shift"
         />
         <Key
           {...(keymap["DANCE_47"] || {})}
           isPressed={
             keymap["DANCE_47"]?.actions.some((action) => keyState[action]) ||
-            false
-          } mode={currentMode}
-        />
-        <Key
-          {...(keymap["DANCE_48"] || {})}
-          isPressed={
-            keymap["DANCE_48"]?.actions.some((action) => keyState[action]) ||
             false
           } mode={currentMode} className="key-iso-ctrl"
         />
