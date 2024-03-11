@@ -5,7 +5,8 @@ export type KeyState = Record<string, boolean>;
 type ModeSetter = (mode: Mode) => void;
 type CurrentMode = 'normal' | 'visual' | 'insert' | undefined;
 
-const InsertKeys = ["i", "I", "a", "A", "o", "O"]
+let visualKeys = ["v", "V"];
+let insertKeys = ["i", "I", "a", "A", "o", "O"]
 
 export const useKeyHandler = (
   setCurrentMode: ModeSetter,
@@ -14,22 +15,25 @@ export const useKeyHandler = (
 ) => {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      //console.log(`Key down: ${event.key}`);
+      
+      console.log(`Key down: ${event.key}`);
       const keyValue = event.shiftKey ? `${event.key}` : event.key;
       console.log(`Key down: ${keyValue}`);
       event.preventDefault();
       setKeyState((prevState) => ({ ...prevState, [event.key]: true }));
 
       if (currentMode === "normal") {
-        if (event.key === "v") {
+        if (visualKeys.includes(event.key)) {
           setCurrentMode("visual");
-        } else if (InsertKeys.includes(event.key)) {
+        } else if (insertKeys.includes(event.key)) {
           setCurrentMode("insert");
         }
       } else if (event.key === "Escape") {
         setCurrentMode("normal");
+      } else if (event.ctrlKey && event.key === "c"){
+        setCurrentMode("normal");
       }
-    };
+    }; 
 
     const handleKeyUp = (event: KeyboardEvent) => {
       setKeyState((prevState) => ({ ...prevState, [event.key]: false }));
