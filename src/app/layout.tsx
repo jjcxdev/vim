@@ -7,6 +7,12 @@ import MobileSplash from "./components/MobileSplash";
 export const metadata: Metadata = {
   title: "VimKeyboard",
   description: "Accelerate learning Vim Motions",
+  twitter: {
+    card: 'summary_large_image',
+    title: 'VimKeyboard',
+    description: 'Learn Vim Motions with VimKeyboard',
+    images: 'https://raw.githubusercontent.com/jjcxdev/vim/main/public/images/vimkeyboard.jpg'
+  },
   openGraph: {
     title: "VimKeyboard",
     description: "Accelerate learning Vim Motions",
